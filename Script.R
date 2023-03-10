@@ -16,15 +16,13 @@ write.csv(no_NAs, "cleaned_data.csv")
 cleaned_data = read.csv("cleaned_data.csv")
 ##Changing Columns names 
 names(cleaned_data) = c("Country_Number" , "Country" , "Population", "Area" , "55-59", "60-64", "65-69", "70-74", "75+" )
-
 ##calculating the % of people exposed to each noise level
 cleaned_data$"55-59 %" =  (cleaned_data$`55-59`) / (cleaned_data$Population) * 100
 cleaned_data$"60-64 %" =  (cleaned_data$`60-64`) / (cleaned_data$Population) * 100 
 cleaned_data$"65-69 %" =  (cleaned_data$`65-69`) / (cleaned_data$Population) * 100
 cleaned_data$"70-74 %" =  (cleaned_data$`70-74`) / (cleaned_data$Population) * 100
 cleaned_data$"75+ %" =  (cleaned_data$`75+`) / (cleaned_data$Population) * 100 
-
-#Merging a world population table to the existing table and tidying it up
+##Merging a world population table to the existing table and tidying it up
 world_pop = read.csv("2017_world_pop.csv")
 names(world_pop) = c("Country", "Population")
 combined_table = merge(world_pop, cleaned_data, by = "Country")
@@ -34,3 +32,14 @@ combined_table$"Exposed to any noise %" = ((combined_table$`55-59`) + (combined_
 combined_table$"Exposed to any noise % of total population" = ((combined_table$`55-59`) + (combined_table$`60-64`) + (combined_table$`65-69`) + (combined_table$`70-74`) + (combined_table$`75+`)) / (combined_table$`Total Population`) * 100
 combined_table = combined_table[,-15]
 write.csv(combined_table, "combined_cleaned_table.csv")
+##Calculating the percentage of the population that was measured
+combined_table$"% measured popultaion" = (combined_table$`Measured Population`) / (combined_table$`Total Population`) * 
+##Joining a coordinates table for displaying a map 
+coridinates = read.csv("coordinates_cities.csv")
+coridinates$City_Name = coridinates$ASCII.Name
+raw_data$City_Name = raw_data$Agglomeration.Name..in.English.
+joined_cor = merge(coridinates, raw_data, by = "City_Name")
+rem_dup <- joined_cor[grepl("Europe", joined_cor$Timezone), ]
+write.csv(rem_dup ,"only_Checked_Cities.csv")
+
+
