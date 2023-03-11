@@ -33,7 +33,7 @@ combined_table$"Exposed to any noise % of total population" = ((combined_table$`
 combined_table = combined_table[,-15]
 write.csv(combined_table, "combined_cleaned_table.csv")
 ##Calculating the percentage of the population that was measured
-combined_table$"% measured popultaion" = (combined_table$`Measured Population`) / (combined_table$`Total Population`) * 
+combined_table$"% measured popultaion" = (combined_table$`Measured Population`) / (combined_table$`Total Population`) * 100
 ##Joining a coordinates table for displaying a map 
 coridinates = read.csv("coordinates_cities.csv")
 coridinates$City_Name = coridinates$ASCII.Name
