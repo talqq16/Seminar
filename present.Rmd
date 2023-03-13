@@ -1,0 +1,73 @@
+---
+title: "What are the Effects of Noise Pollution on Our Mental Health?"
+author: "Tal Bracha"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: yeti
+   
+---
+
+## Intro
+
+Exposure to noise pollution has become a widespread problem in many urban areas, affecting millions of people worldwide. Noise pollution is defined as unwanted or excessive sound that can disrupt the natural balance of an environment, causing annoyance, stress, and other negative effects on human health. In recent years, research has shown that noise pollution can have significant effects on human mental health, including sleep disturbances, anxiety, depression, and cognitive impairment. Excessive noise can also contribute to the development of cardiovascular disease and other physical health problems, making it a major public health concern. Therefore, understanding the effects of noise pollution on mental health is essential for developing effective strategies to prevent or mitigate its negative impact on human well-being. This paper will review the current literature on the effects of noise pollution on human mental health and will use existing data on mental health and noise pollution to find correlation between the two using statistical analysis.
+
+## Litrature Review
+
+Literature 0 - EPA Identifies Noise Levels Affecting Health and Welfare
+
+This document was released by the EPA to provide a basis for state and local governments' judgments in setting standards of noise level allowed.
+The document identifies a 24-hour exposure level of 70 decibels as the level of environmental noise which will prevent any measurable hearing loss over a lifetime. Likewise, levels of 55 decibels outdoors and 45 decibels indoors are identified as preventing activity interference and annoyance. These levels of noise are considered those which will permit spoken conversation and other activities such as sleeping, working and recreation, which are part of the daily human condition.
+The levels are not single event, or "peak" levels. Instead, they represent averages of acoustic energy over periods of time such as 8 hours or 24 hours, and over long periods of time such as years. For example, occasional higher noise levels would be consistent with a 24-hour energy average of 70 decibels, so long as a sufficient amount of relative quiet is experienced for the remaining period of time.
+ 
+Literature 1 – Noise Pollution & Human Health: A Review
+
+In this article Jariwala et al (2017) analyze the interaction between noise pollution and the way it affects our health in various aspects, both physical and mental. Regarding mental health, they say: “Noise pollution is not believed to be a cause of mental illness, but it is assumed to accelerate and intensify the development of latent mental disorders”, they also explain that noise pollution can cause anxiety, stress, nausea and more, those effects can intensify other disorders such as depression and OCD.
+Additionally, this article also provides an explanation about the effects of noise on cardiovascular disturbances, they explain that noise acts as a biologic stressor that prepares the body for a fight or flight response which can cause to a temporary increase in blood pressure, heart rate and vasoconstriction but when we are exposed to noise in sufficient intensity and duration those temporary effects can lead to a more serious and permanent disturbances.
+
+Literature 2 – Noise Pollution & Human Health: A Review
+
+In this article Singh et al (2017) also analyze the interaction between noise pollution and human health but they focus specifically on road traffic noise which is probably the most common noise people are exposed to, especially in highly populated areas. Firstly, they define noise pollution as: “noise beyond the permissible limits” and continue to explain that today due to developing industrialization and urbanization, noise pollution is emerging as one of the major environmental hazards to public health.
+They focused on the effects noise have on Annoyance, Cardiovascular health, Blood pressure, Pregnancy, and mental health. Their conclusion was similar Jariwala’s et al (2017) and said that mental health is a very broad subject and that mental health disorders can not be caused by noise pollution alone, that being said noise can cause annoyance and decrease sleep efficiency to people with high sensitivity to noise which can intensify existing mental health disorders.
+
+Literature 3 - Noise Pollution-Sources, Effects and Control
+
+This study done by Singh & Davar (2004) examines the sources and the effects of noise pollution on Delhi using a survey and compared between females and males to determine who’s more vulnerable to noise pollution.
+In a survey done among 150 individuals about what sources of noise pollution affects them they found out most people consider loudspeakers to be the main source (80%) while automobiles are at the 2nd place (67%), religious functions (59%) are 3rd, and Neighbourhoods (49%) are at the 4th place.
+Their main conclusion was that most people who exposed to noise pollution suffer improper communication, sleeplessness, and reduced efficiency. Also common were the psycho-somatic effects (annoyance and depression), yet extreme effects like deafness and mental breakdown were quite rare but still can not be ruled out. Regarding age and gender, they found out that the age group of 20-40 were the least sensitive to noise and they found no variations between males and females.
+
+Literature 4 Noise pollution: non-auditory effects on health
+
+This article was written in 2003 by Stansfeld & Matheson in 2003 and studied the non auditory effects noise pollution have on our health, it starts of by saying that continuous exposure to noise of 85-90 dBA  over a lifetime in industrial settings, can lead to a progressive loss of hearing. However, the levels of environmental noise, as opposed to industrial noise, are much lower and effects on non-auditory health cannot be explained as a consequence of sound energy.
+Much like the other articles, the main conclusion here is that noise pollution main effect is annoyance which in return can cause stress responses, then symptoms and possibly illness and thus affect our health indirectly. However, noise may influence health directly and not through annoyance. The response to noise may depend on characteristics of the sound, including intensity, frequency, complexity of sound, duration, and the meaning of the noise.
+Regarding mental disorder, it found no relationship between aircraft noise and road traffic noise to  psychiatric disorder  even after adjustment for socio-demographic factors and baseline psychiatric disorder, although there was a small non-linear association of noise with increased anxiety scores.  
+Some studies in Japan found a correlation between exposure to higher levels of military aircraft noise to depressiveness and nervousness, and road traffic noise has been weakly associated with mental health symptoms after adjusting for age, sex, income, and length of residence, Overall, environmental noise seems to be linked to psychological symptoms but not to clinical psychiatric disorder. However, there may be a link to psychiatric disorder at much higher noise levels.
+In the subject of physical health, the results were similar and included: increasing blood pressure,  cardiovascular diseases, and insomnia.
+
+## Methodology
+
+My 3 main data sets are:
+
+1)Noise Pollution - In 2002 the Environmental Noise Directive was established in Europe and required all 27 member states to publish a noise report for every city with over 100,000 inhabitants every 5 years. The reports will be divided into 5 levels of noise: 55 to 59 dB, 60 to 64 dB, 65 to 69 dB, 70 to 74 dB and >75 dB under each noise level there will be the number of people exposed to it. The most recent data are from 2017 and included all cities in Europe with over 100,000 inhabitants from 36 different countries, because the END requires only member states to publish the report much of my data had NA's values, after cleaning those values I was left with cities from 30 different countries. This data was collected from the European Environment Agency site.
+
+2)Mental Health Disorders - The second data I needed are ones of mental health disorders, including: depression, eating disorders, anxiety, bipolar depression and development disabilities. Because I had noise pollution data on a city level I opted to get data about mental health also on a city level, this data proved to be immensely difficult to find and only existed in the country level. To overcome this discrepancy I decided to group my noise pollution data by countries and sum the number of people exposed to each noise level, this had two main problems:
+
+- I was left with a much smaller data set.
+
+- The percentage of the population exposed to different noise levels isn't the percentage from the whole population and only from the population that lives in cities with 100,000 inhabitants or more, and for comparison the mental health data is derived from the whole population.
+
+
+3)The third and last data will consist of: average temperature, socioeconomic factors and education index. As all of them has a proven effect on mental health as well.
+
+## Mapping the Noise Pollution 
+
+
+```{r, echo = FALSE}
+knitr::include_graphics("Europe_Measured_Pop.png")
+```
+
+```{r, echo = FALSE}
+knitr::include_graphics("Europe_Total_Population.png")
+
+```
+
