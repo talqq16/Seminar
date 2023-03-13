@@ -1,3 +1,5 @@
+setwd("C:/Users/User/Desktop/Geo-informatics Seminar/Seminar/Data")
+library(dplyr)
 ##Cleaning the data:
 
 ##Reading the raw data file
@@ -26,7 +28,7 @@ cleaned_data$"75+ %" =  (cleaned_data$`75+`) / (cleaned_data$Population) * 100
 world_pop = read.csv("2017_world_pop.csv")
 names(world_pop) = c("Country", "Population")
 combined_table = merge(world_pop, cleaned_data, by = "Country")
-names(combined_table) = c("Country" , "Total Population","Country Number", "Measured Population", "Area" , "55-59", "60-64", "65-69", "70-74", "75+", "55-59 %", "60-64 %", "65-69 %", "70-74 %","75+ %"  )
+names(combined_table) = c("Country" , "Total Population", "Measured Population", "Area" , "55-59", "60-64", "65-69", "70-74", "75+", "55-59 %", "60-64 %", "65-69 %", "70-74 %","75+ %"  )
 combined_table = combined_table[,-3]
 combined_table$"Exposed to any noise %" = ((combined_table$`55-59`) + (combined_table$`60-64`) + (combined_table$`65-69`) + (combined_table$`70-74`) + (combined_table$`75+`)) / (combined_table$`Measured Population`) * 100
 combined_table$"Exposed to any noise % of total population" = ((combined_table$`55-59`) + (combined_table$`60-64`) + (combined_table$`65-69`) + (combined_table$`70-74`) + (combined_table$`75+`)) / (combined_table$`Total Population`) * 100
