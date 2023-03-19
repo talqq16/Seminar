@@ -43,5 +43,45 @@ raw_data$City_Name = raw_data$Agglomeration.Name..in.English.
 joined_cor = merge(coridinates, raw_data, by = "City_Name")
 rem_dup <- joined_cor[grepl("Europe", joined_cor$Timezone), ]
 write.csv(rem_dup ,"only_Checked_Cities.csv")
+#Reading all the mental health disorders tables
+Depression = read.csv("Depression.csv")
+Anxiety = read.csv("Anxiety.csv")
+Eating_Disorder = read.csv("Eating Disorder.csv")
+Bipolar = read.csv("Bipolar.csv")
+Schizophrenia = read.csv("Schizophrenia.csv")
+#Removing all the data that isn't from 2017
+Depression_2017 = subset(Depression, Year == 2017)
+Anxiety_2017 = subset(Anxiety, Year == 2017)
+Eating_Disorder_2017 = subset(Eating_Disorder, Year == 2017)
+Bipolar_2017 = subset(Bipolar, Year == 2017)
+Schizophrenia_2017 = subset(Schizophrenia, Year == 2017)
+#Combining all the tables into one
+merged_mental_health = merge(Depression_2017, Anxiety_2017, by = "Entity")
+merged_mental_health = merge(merged_mental_health, Eating_Disorder_2017, by = "Entity")
+merged_mental_health = merge(merged_mental_health, Bipolar_2017, by = "Entity")
+merged_mental_health = merge(merged_mental_health, Schizophrenia_2017, by = "Entity")
+#Deleting unnecessary columns 
+merged_mental_health$Code.x = NULL
+merged_mental_health$Year.y = NULL
+merged_mental_health$Code.y = NULL
+merged_mental_health$Code.x = NULL
+merged_mental_health$Code.y = NULL
+merged_mental_health$Code = NULL
+merged_mental_health$Year.x = NULL
+merged_mental_health$Year.x = NULL
+merged_mental_health$Year.y = NULL
+merged_mental_health$Year = NULL
+#Renaming the columns
+names(merged_mental_health) = c('Country' , 'Depression %', 'Anxiety %', 'Eating Disorder %', 'Bipolar Disorder %', 'Schizophrenia %')
+#Merging the noise pollution and the mental health data
+noise_and_mental_health = merge(merged_mental_health,combined_table, by = "Country")
+write.csv(noise_and_mental_health, "Noise and Mental Health.csv")
 
-
+mean_school = read.csv("Mean Years of Schooling.csv")
+mean_school$Continent = NULL
+mean_school$ISO_Code = NULL
+mean_school$Level= NULL
+mean_school$GDLCODE = NULL
+mean_school$Region = NULL
+names(mean_school) = c('Country', 'Avreage Years in School')
+noise_mental_education = merge(noise_and_mental_health, mean_school, by = "Country")
