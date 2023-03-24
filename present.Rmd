@@ -36,7 +36,7 @@ This study done by Singh & Davar (2004) examines the sources and the effects of 
 In a survey done among 150 individuals about what sources of noise pollution affects them they found out most people consider loudspeakers to be the main source (80%) while automobiles are at the 2nd place (67%), religious functions (59%) are 3rd, and Neighbourhoods (49%) are at the 4th place.
 Their main conclusion was that most people who exposed to noise pollution suffer improper communication, sleeplessness, and reduced efficiency. Also common were the psycho-somatic effects (annoyance and depression), yet extreme effects like deafness and mental breakdown were quite rare but still can not be ruled out. Regarding age and gender, they found out that the age group of 20-40 were the least sensitive to noise and they found no variations between males and females.
 
-Literature 4 Noise pollution: non-auditory effects on health
+Literature 4 - Noise pollution: non-auditory effects on health
 
 This article was written in 2003 by Stansfeld & Matheson in 2003 and studied the non auditory effects noise pollution have on our health, it starts of by saying that continuous exposure to noise of 85-90 dBA  over a lifetime in industrial settings, can lead to a progressive loss of hearing. However, the levels of environmental noise, as opposed to industrial noise, are much lower and effects on non-auditory health cannot be explained as a consequence of sound energy.
 Much like the other articles, the main conclusion here is that noise pollution main effect is annoyance which in return can cause stress responses, then symptoms and possibly illness and thus affect our health indirectly. However, noise may influence health directly and not through annoyance. The response to noise may depend on characteristics of the sound, including intensity, frequency, complexity of sound, duration, and the meaning of the noise.
@@ -44,21 +44,35 @@ Regarding mental disorder, it found no relationship between aircraft noise and r
 Some studies in Japan found a correlation between exposure to higher levels of military aircraft noise to depressiveness and nervousness, and road traffic noise has been weakly associated with mental health symptoms after adjusting for age, sex, income, and length of residence, Overall, environmental noise seems to be linked to psychological symptoms but not to clinical psychiatric disorder. However, there may be a link to psychiatric disorder at much higher noise levels.
 In the subject of physical health, the results were similar and included: increasing blood pressure,  cardiovascular diseases, and insomnia.
 
+Literature 5 - Mental health effects of education
+
+In this article Kondirolli & Sunder explore the relationship between education and mental health, specifically the long-term effects of education on mental well-being. the authors find that an increase in education has a protective effect on mental health more than two decades later. Specifically, an extra year of education led to a lower likelihood of reporting any symptoms related to depression and anxiety, as well as less severe symptoms. These protective effects were higher among women and rural residents. The authors suggest that the effects of education on mental well-being may be mediated through better physical health, improved health behavior and knowledge, and an increase in women's empowerment. The paper adds to the growing evidence on the efficacy of education in improving health outcomes and motivates future research on the impact of large-scale policies on understudied outcomes such as mental health.
+
+Literature 6 - Income inequality and depression: a systematic review and meta‐analysis of the association and a scoping review of mechanisms
+
+In Patel et al review 26 studies on the relationship between income inequality and depression, finding that the majority of studies report a positive association between the two. The paper proposes an ecological framework to explain this association, with mechanisms operating at the national, neighborhood, and individual levels. 
+they also predict that if their findings is an indicative of a causal relationship, then we should expect worse mental health globally in the years ahead, as income inequality is continuing to increase in most countries, making the United Nations (UN) Sustainable Development Goal targets for mental health even harder to achieve. This is especially likely to be the case for disadvantaged or vulnerable groups in the population that already bear a disproportionate burden of mental health problems, such as women, adolescents, older adults and low‐income groups.
+
+Mental health professionals, regardless of their political persuasion, should carefully assess the evidence presented in this review to shape their position with respect to the ideologically contentious issue of income inequality. They should ally with other stakeholders in government and civil society who are arguing for a fairer, more equitable distribution of income, as this is a major social determinant of poor mental health, while also drawing attention to the need for greater investments in proven individual interventions for the prevention and treatment of depression.
+
+
 ## Methodology
 
 My 3 main data sets are:
 
 1)Noise Pollution - In 2002 the Environmental Noise Directive was established in Europe and required all 27 member states to publish a noise report for every city with over 100,000 inhabitants every 5 years. The reports will be divided into 5 levels of noise: 55 to 59 dB, 60 to 64 dB, 65 to 69 dB, 70 to 74 dB and >75 dB under each noise level there will be the number of people exposed to it. The most recent data are from 2017 and included all cities in Europe with over 100,000 inhabitants from 36 different countries, because the END requires only member states to publish the report much of my data had NA's values, after cleaning those values I was left with cities from 30 different countries. This data was collected from the European Environment Agency site.
 
-2)Mental Health Disorders - The second data I needed are ones of mental health disorders, including: depression, eating disorders, anxiety, bipolar depression and development disabilities. Because I had noise pollution data on a city level I opted to get data about mental health also on a city level, this data proved to be immensely difficult to find and only existed in the country level. To overcome this discrepancy I decided to group my noise pollution data by countries and sum the number of people exposed to each noise level, this had two main problems:
+2)Mental Health Disorders - The second data I needed are ones of mental health disorders, including: depression, Anxiety disorders, Bipolar disorder, Eating disorders and Schizophrenia. 
+This data was gathered from Our World in Data.
+Because I had noise pollution data on a city level I opted to get data about mental health also on a city level, this data proved to be immensely difficult to find and only existed in the country level. To overcome this discrepancy I decided to group my noise pollution data by countries and sum the number of people exposed to each noise level, this had two main problems:
 
 - I was left with a much smaller data set.
 
 - The percentage of the population exposed to different noise levels isn't the percentage from the whole population and only from the population that lives in cities with 100,000 inhabitants or more, and for comparison the mental health data is derived from the whole population.
 
+All of the mental health data was collected from the "Our World in Data" site.
 
-3)The third and last data will consist of: average temperature, socioeconomic factors and education index. As all of them has a proven effect on mental health as well.
-
+3)The third and last data will consist of indices that are believed to have a correlation to mental health disorders rates such as: average years in school, gini index
 ## Mapping the Noise Pollution 
 
 

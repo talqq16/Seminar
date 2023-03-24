@@ -1,46 +1,46 @@
-Country,Continent,ISO_Code,Level,GDLCODE,Region,"2017"
-"Albania","Europe","ALB","National","ALBt","Total",10.91
-"Andorra","Europe","AND","National","ANDt","Total",10.56
-"Armenia","Europe","ARM","National","ARMt","Total",11.19
-"Austria","Europe","AUT","National","AUTt","Total",12.16
-"Azerbaijan","Europe","AZE","National","AZEt","Total",10.55
-"Belarus","Europe","BLR","National","BLRt","Total",11.95
-"Belgium","Europe","BEL","National","BELt","Total",12.24
-"Bosnia Herzegovina","Europe","BIH","National","BIHt","Total",9.753
-"Bulgaria","Europe","BGR","National","BGRt","Total",11.24
-"Croatia","Europe","HRV","National","HRVt","Total",11.92
-"Cyprus","Europe","CYP","National","CYPt","Total",12.19
-"Czech Republic","Europe","CZE","National","CZEt","Total",12.79
-"Denmark","Europe","DNK","National","DNKt","Total",13.01
-"Estonia","Europe","EST","National","ESTt","Total",13.56
-"Finland","Europe","FIN","National","FINt","Total",12.74
-"France","Europe","FRA","National","FRAt","Total",11.41
-"Georgia","Europe","GEO","National","GEOt","Total",12.87
-"Germany","Europe","DEU","National","DEUt","Total",14.11
-"Greece","Europe","GRC","National","GRCt","Total",10.54
-"Hungary","Europe","HUN","National","HUNt","Total",11.98
-"Iceland","Europe","ISL","National","ISLt","Total",13.46
-"Ireland","Europe","IRL","National","IRLt","Total",11.43
-"Italy","Europe","ITA","National","ITAt","Total",10.48
-"Kosovo","Europe","XKO","National","KSVt","Total",11.19
-"Latvia","Europe","LVA","National","LVAt","Total",13.06
-"Liechtenstein","Europe","LIE","National","LIEt","Total",12.39
-"Lithuania","Europe","LTU","National","LTUt","Total",13.19
-"Luxembourg","Europe","LUX","National","LUXt","Total",12.65
-"Moldova","Europe","MDA","National","MDAt","Total",11.82
-"Monte Negro","Europe","MNE","National","MNEt","Total",11.95
-"Netherlands","Europe","NLD","National","NLDt","Total",12.25
-"North Macedonia","Europe","MKD","National","MKDt","Total",9.711
-"Norway","Europe","NOR","National","NORt","Total",12.95
-"Poland","Europe","POL","National","POLt","Total",13.05
-"Portugal","Europe","PRT","National","PRTt","Total",9.218
-"Romania","Europe","ROU","National","ROUt","Total",11.15
-"Russian Federation","Europe","RUS","National","RUSt","Total",12.72
-"Serbia","Europe","SRB","National","SRBt","Total",11.16
-"Slovakia","Europe","SVK","National","SVKt","Total",12.77
-"Slovenia","Europe","SVN","National","SVNt","Total",12.70
-"Spain","Europe","ESP","National","ESPt","Total",10.08
-"Sweden","Europe","SWE","National","SWEt","Total",12.49
-"Switzerland","Europe","CHE","National","CHEt","Total",13.73
-"Ukraine","Europe","UKR","National","UKRt","Total",11.15
-"United Kingdom","Europe","GBR","National","GBRt","Total",13.16
+Country,Continent,ISO_Code,Level,GDLCODE,Region,2017
+Albania,Europe,ALB,National,ALBt,Total,10.91
+Andorra,Europe,AND,National,ANDt,Total,10.56
+Armenia,Europe,ARM,National,ARMt,Total,11.19
+Austria,Europe,AUT,National,AUTt,Total,12.16
+Azerbaijan,Europe,AZE,National,AZEt,Total,10.55
+Belarus,Europe,BLR,National,BLRt,Total,11.95
+Belgium,Europe,BEL,National,BELt,Total,12.24
+Bosnia Herzegovina,Europe,BIH,National,BIHt,Total,9.753
+Bulgaria,Europe,BGR,National,BGRt,Total,11.24
+Croatia,Europe,HRV,National,HRVt,Total,11.92
+Cyprus,Europe,CYP,National,CYPt,Total,12.19
+Czech Republic,Europe,CZE,National,CZEt,Total,12.79
+Denmark,Europe,DNK,National,DNKt,Total,13.01
+Estonia,Europe,EST,National,ESTt,Total,13.56
+Finland,Europe,FIN,National,FINt,Total,12.74
+France,Europe,FRA,National,FRAt,Total,11.41
+Georgia,Europe,GEO,National,GEOt,Total,12.87
+Germany,Europe,DEU,National,DEUt,Total,14.11
+Greece,Europe,GRC,National,GRCt,Total,10.54
+Hungary,Europe,HUN,National,HUNt,Total,11.98
+Iceland,Europe,ISL,National,ISLt,Total,13.46
+Ireland,Europe,IRL,National,IRLt,Total,11.43
+Italy,Europe,ITA,National,ITAt,Total,10.48
+Kosovo,Europe,XKO,National,KSVt,Total,11.19
+Latvia,Europe,LVA,National,LVAt,Total,13.06
+Liechtenstein,Europe,LIE,National,LIEt,Total,12.39
+Lithuania,Europe,LTU,National,LTUt,Total,13.19
+Luxembourg,Europe,LUX,National,LUXt,Total,12.65
+Moldova,Europe,MDA,National,MDAt,Total,11.82
+Montenegro,Europe,MNE,National,MNEt,Total,11.95
+Netherlands,Europe,NLD,National,NLDt,Total,12.25
+North Macedonia,Europe,MKD,National,MKDt,Total,9.711
+Norway,Europe,NOR,National,NORt,Total,12.95
+Poland,Europe,POL,National,POLt,Total,13.05
+Portugal,Europe,PRT,National,PRTt,Total,9.218
+Romania,Europe,ROU,National,ROUt,Total,11.15
+Russian Federation,Europe,RUS,National,RUSt,Total,12.72
+Serbia,Europe,SRB,National,SRBt,Total,11.16
+Slovakia,Europe,SVK,National,SVKt,Total,12.77
+Slovenia,Europe,SVN,National,SVNt,Total,12.7
+Spain,Europe,ESP,National,ESPt,Total,10.08
+Sweden,Europe,SWE,National,SWEt,Total,12.49
+Switzerland,Europe,CHE,National,CHEt,Total,13.73
+Ukraine,Europe,UKR,National,UKRt,Total,11.15
+United Kingdom,Europe,GBR,National,GBRt,Total,13.16

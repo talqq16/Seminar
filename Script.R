@@ -26,23 +26,18 @@ cleaned_data$"70-74 %" =  (cleaned_data$`70-74`) / (cleaned_data$Population) * 1
 cleaned_data$"75+ %" =  (cleaned_data$`75+`) / (cleaned_data$Population) * 100 
 ##Merging a world population table to the existing table and tidying it up
 world_pop = read.csv("2017_world_pop.csv")
+world_pop$Country.Code = NULL
+world_pop$Indicator.Name = NULL
+world_pop$Indicator.Code = NULL
 names(world_pop) = c("Country", "Population")
 combined_table = merge(world_pop, cleaned_data, by = "Country")
+combined_table$Country_Number = NULL
 names(combined_table) = c("Country" , "Total Population", "Measured Population", "Area" , "55-59", "60-64", "65-69", "70-74", "75+", "55-59 %", "60-64 %", "65-69 %", "70-74 %","75+ %"  )
-combined_table = combined_table[,-3]
 combined_table$"Exposed to any noise %" = ((combined_table$`55-59`) + (combined_table$`60-64`) + (combined_table$`65-69`) + (combined_table$`70-74`) + (combined_table$`75+`)) / (combined_table$`Measured Population`) * 100
 combined_table$"Exposed to any noise % of total population" = ((combined_table$`55-59`) + (combined_table$`60-64`) + (combined_table$`65-69`) + (combined_table$`70-74`) + (combined_table$`75+`)) / (combined_table$`Total Population`) * 100
-combined_table = combined_table[,-15]
 write.csv(combined_table, "combined_cleaned_table.csv")
 ##Calculating the percentage of the population that was measured
 combined_table$"% measured popultaion" = (combined_table$`Measured Population`) / (combined_table$`Total Population`) * 100
-##Joining a coordinates table for displaying a map 
-coridinates = read.csv("coordinates_cities.csv")
-coridinates$City_Name = coridinates$ASCII.Name
-raw_data$City_Name = raw_data$Agglomeration.Name..in.English.
-joined_cor = merge(coridinates, raw_data, by = "City_Name")
-rem_dup <- joined_cor[grepl("Europe", joined_cor$Timezone), ]
-write.csv(rem_dup ,"only_Checked_Cities.csv")
 #Reading all the mental health disorders tables
 Depression = read.csv("Depression.csv")
 Anxiety = read.csv("Anxiety.csv")
@@ -71,7 +66,10 @@ merged_mental_health$Year.x = NULL
 merged_mental_health$Year.x = NULL
 merged_mental_health$Year.y = NULL
 merged_mental_health$Year = NULL
+write.csv(merged_mental_health, "merged_mental_health.csv")
+merged_mental_health = read.csv("merged_mental_health.csv")
 #Renaming the columns
+merged_mental_health$X = NULL
 names(merged_mental_health) = c('Country' , 'Depression %', 'Anxiety %', 'Eating Disorder %', 'Bipolar Disorder %', 'Schizophrenia %')
 #Merging the noise pollution and the mental health data
 noise_and_mental_health = merge(merged_mental_health,combined_table, by = "Country")
@@ -85,3 +83,7 @@ mean_school$GDLCODE = NULL
 mean_school$Region = NULL
 names(mean_school) = c('Country', 'Avreage Years in School')
 noise_mental_education = merge(noise_and_mental_health, mean_school, by = "Country")
+
+Gini = read.csv("Gini.csv")
+names(Gini) = c("Country","Gini Index")
+noise_mental_education_gini = merge(noise_mental_education, Gini , by = "Country")
