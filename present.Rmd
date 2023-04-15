@@ -56,6 +56,8 @@ they also predict that if their findings is an indicative of a causal relationsh
 Mental health professionals, regardless of their political persuasion, should carefully assess the evidence presented in this review to shape their position with respect to the ideologically contentious issue of income inequality. They should ally with other stakeholders in government and civil society who are arguing for a fairer, more equitable distribution of income, as this is a major social determinant of poor mental health, while also drawing attention to the need for greater investments in proven individual interventions for the prevention and treatment of depression.
 
 
+
+
 ## Methodology
 
 My 3 main data sets are:
@@ -63,22 +65,33 @@ My 3 main data sets are:
 1)Noise Pollution - In 2002 the Environmental Noise Directive was established in Europe and required all 27 member states to publish a noise report for every city with over 100,000 inhabitants every 5 years. The reports will be divided into 5 levels of noise: 55 to 59 dB, 60 to 64 dB, 65 to 69 dB, 70 to 74 dB and >75 dB under each noise level there will be the number of people exposed to it. The most recent data are from 2017 and included all cities in Europe with over 100,000 inhabitants from 36 different countries, because the END requires only member states to publish the report much of my data had NA's values, after cleaning those values I was left with cities from 30 different countries. This data was collected from the European Environment Agency site.
 
 2)Mental Health Disorders - The second data I needed are ones of mental health disorders, including: depression, Anxiety disorders, Bipolar disorder, Eating disorders and Schizophrenia. 
-This data was gathered from Our World in Data.
+This data was gathered from Our World in Data, and are the percentages of the population that suffer from every disorder.
 Because I had noise pollution data on a city level I opted to get data about mental health also on a city level, this data proved to be immensely difficult to find and only existed in the country level. To overcome this discrepancy I decided to group my noise pollution data by countries and sum the number of people exposed to each noise level, this had two main problems:
 
 - I was left with a much smaller data set.
 
 - The percentage of the population exposed to different noise levels isn't the percentage from the whole population and only from the population that lives in cities with 100,000 inhabitants or more, and for comparison the mental health data is derived from the whole population.
 
-All of the mental health data was collected from the "Our World in Data" site.
+3)The third and last data will consist of indices that are believed to have a correlation to mental health disorders rates: 
 
-3)The third and last data will consist of indices that are believed to have a correlation to mental health disorders rates such as: average years in school, gini index
-## Mapping the Noise Pollution 
+Mean years of schooling (MYS) - this index refers to the average number of years of education completed by individuals in a certain population. It is a measure of the level of education in a society or country. To calculate mean years of schooling, the total number of years of education completed by a group of individuals is divided by the total number of individuals in the group. For example, if a group of 100 individuals has a total of 1,000 years of education completed among them, then the mean years of schooling for that group is 10 years. Mean years of schooling can be used to compare the level of education across different groups, such as men and women or different regions of a country. It is also used as an input for various social and economic analyses, such as the calculation of the Human Development Index (HDI) by the United Nations Development Programme (UNDP).
 
+GINI Index - The Gini index, or Gini coefficient, is a statistical measure used to represent the distribution of income or wealth within a population. It is named after the Italian statistician Corrado Gini, who developed the concept in 1912. The Gini index is a number between 0 and 1, where 0 represents perfect equality (where everyone has the same income or wealth) and 1 represents perfect inequality (where one person has all the income or wealth and everyone else has none). To calculate the Gini index, the Lorenz curve is first plotted, which shows the cumulative share of the population's income or wealth against the cumulative share of the population. The Gini index is then calculated as the area between the Lorenz curve and the line of perfect equality (the diagonal line from the bottom left corner to the top right corner of the graph), divided by the total area under the line of perfect equality. The Gini index is often used as a measure of income or wealth inequality in a society or country. Higher Gini coefficients indicate greater inequality, while lower Gini coefficients indicate greater equality. The index can be used to compare income or wealth distributions across different countries or over time within a single country.
+
+
+## Mapping the Noise Pollution
+
+
+I used ArcMap to map out the noise pollution levels in Europe, in this map a lighter color means that fewer people exposed to noise pollution (above 55 dB) and darker color means that more people are exposed to noise pollution. 
+
+
+This map refers to the percentages from the measured population (Which is the population that lives in cities with 100,000 or more inhabitants): 
 
 ```{r, echo = FALSE}
 knitr::include_graphics("Europe_Measured_Pop.png")
 ```
+
+This map refers to the total population of the country:
 
 ```{r, echo = FALSE}
 knitr::include_graphics("Europe_Total_Population.png")
