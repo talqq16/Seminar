@@ -62,10 +62,12 @@ Mental health professionals, regardless of their political persuasion, should ca
 
 My 3 main data sets are:
 
-1)Noise Pollution - In 2002 the Environmental Noise Directive was established in Europe and required all 27 member states to publish a noise report for every city with over 100,000 inhabitants every 5 years. The reports will be divided into 5 levels of noise: 55 to 59 dB, 60 to 64 dB, 65 to 69 dB, 70 to 74 dB and >75 dB under each noise level there will be the number of people exposed to it. The most recent data are from 2017 and included all cities in Europe with over 100,000 inhabitants from 36 different countries, because the END requires only member states to publish the report much of my data had NA's values, after cleaning those values I was left with cities from 30 different countries. This data was collected from the European Environment Agency site.
+1)Noise Pollution - In 2002 the Environmental Noise Directive was established in Europe and required all 27 member states to publish a noise report for every city with over 100,000 inhabitants every 5 years. The reports will be divided into 5 levels of noise: 55 to 59 dB, 60 to 64 dB, 65 to 69 dB, 70 to 74 dB and >75 dB under each noise level there will be the number of people exposed to it. The decibels are the mean for the whole day (7:00-19:00), for noise during evening hours (19:00-23:00) there is a 5 dB additional penalty and for night noise (23:00-7:00) there is a 10 dB additional penalty.
+The most recent data are from 2017 and included all cities in Europe with over 100,000 inhabitants from 36 different countries, because the END requires only member states to publish the report much of my data had NA's values, after cleaning those values I was left with cities from 30 different countries. This data and information was gathered from the European Environment Agency site.
+
 
 2)Mental Health Disorders - The second data I needed are ones of mental health disorders, including: depression, Anxiety disorders, Bipolar disorder, Eating disorders and Schizophrenia. 
-This data was gathered from Our World in Data, and are the percentages of the population that suffer from every disorder.
+This data was gathered from Our World in Data, and are the percentages of the population that suffer from each disorder.
 Because I had noise pollution data on a city level I opted to get data about mental health also on a city level, this data proved to be immensely difficult to find and only existed in the country level. To overcome this discrepancy I decided to group my noise pollution data by countries and sum the number of people exposed to each noise level, this had two main problems:
 
 - I was left with a much smaller data set.
