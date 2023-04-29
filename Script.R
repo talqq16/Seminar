@@ -87,3 +87,11 @@ noise_mental_education = merge(noise_and_mental_health, mean_school, by = "Count
 Gini = read.csv("Gini.csv")
 names(Gini) = c("Country","Gini Index")
 noise_mental_education_gini = merge(noise_mental_education, Gini , by = "Country")
+
+work = read.csv("work_hours.csv")
+work_subset = subset(work , Year == 2017)
+work_subset$Code = NULL
+work_subset$Year = NULL
+names(work_subset) = c("Country", "Annual Working Hours")
+noise_mental_education_gini_Work = merge(noise_mental_education_gini, work_subset, by = "Country" )
+
