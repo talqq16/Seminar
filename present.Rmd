@@ -114,23 +114,73 @@ The country that remained were the following: Austria, Belgium, Bulgaria,Croatia
 
 
 
-## Mapping the Noise Pollution
+## Appendices:
 
+This map displays the percentages from the measured population that is exposed to 55+ dB:
 
-I used ArcMap to map out the noise pollution levels in Europe, in this map a lighter color means that fewer people exposed to noise pollution (above 55 dB) and darker color means that more people are exposed to noise pollution. 
-
-
-This map refers to the percentages from the measured population (Which is the population that lives in cities with 100,000 or more inhabitants): 
-
-```{r, echo = FALSE}
+```{r, out.width = "750px",out.height = "750px",echo = FALSE}
 knitr::include_graphics("Europe_Measured_Pop.png")
 ```
 
-This map refers to the total population of the country:
+This map displays the percentages of the population that is exposed to 55+ dB:
 
-```{r, echo = FALSE}
+```{r,out.width = "750px",out.height = "750px", echo = FALSE}
 knitr::include_graphics("Europe_Total_Population.png")
 
 ```
 
+This map displays the percentages of the population that is suffering from depression:
 
+```{r, out.width = "750px",out.height = "750px",echo = FALSE}
+knitr::include_graphics("Depression.png")
+
+```
+
+This map displays the percentages of the population that is suffering from anxiety:
+
+```{r, out.width = "750px",out.height = "750px",echo = FALSE}
+knitr::include_graphics("Anxiety.png")
+
+```
+
+This map displays the percentages of the population that is suffering from eating disorders:
+
+```{r, out.width = "750px",out.height = "750px",echo = FALSE}
+knitr::include_graphics("Eating Disorders.png")
+
+```
+
+This map displays the percentages of the population that is suffering from bipolar disorder:
+
+```{r, out.width = "750px",out.height = "750px",echo = FALSE}
+knitr::include_graphics("Bipolar.png")
+
+```
+
+This map displays the percentages of the population that is suffering from Schizophrenia:
+
+```{r, out.width = "750px",out.height = "750px",echo = FALSE}
+knitr::include_graphics("Schizophrenia.png")
+
+```
+
+This map displays the Gini index of the EU countries:
+
+```{r, out.width = "750px",out.height = "750px",echo = FALSE}
+knitr::include_graphics("Gini.png")
+
+```
+
+This map displays the average years in school for every country:
+
+```{r, out.width = "750px",out.height = "750px",echo = FALSE}
+knitr::include_graphics("MYS.png")
+
+```
+
+This map displays the avreage annual working hours  for every country:
+
+```{r, out.width = "750px",out.height = "750px",echo = FALSE}
+knitr::include_graphics("Annual Working Hours.png")
+
+```

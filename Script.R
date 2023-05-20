@@ -95,3 +95,4 @@ work_subset$Year = NULL
 names(work_subset) = c("Country", "Annual Working Hours")
 noise_mental_education_gini_Work = merge(noise_mental_education_gini, work_subset, by = "Country" )
 
+write.csv(noise_mental_education_gini_Work, "final_table.csv")
