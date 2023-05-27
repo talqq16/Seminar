@@ -97,10 +97,25 @@ noise_mental_education_gini_Work = merge(noise_mental_education_gini, work_subse
 
 write.csv(noise_mental_education_gini_Work, "final_table.csv")
 
-shapiro.test(noise_mental_education_gini_Work$`Exposed to any noise % of total population`)
+distribution_noise = shapiro.test(noise_mental_education_gini_Work$`Exposed to any noise % of total population`)
+distribution_depression = shapiro.test(noise_mental_education_gini_Work$`Depression %`)
+distribution_anxiety = shapiro.test(noise_mental_education_gini_Work$`Anxiety %`)
+distribution_eating = shapiro.test(noise_mental_education_gini_Work$`Eating Disorder %`)
+distribution_bipolar = shapiro.test(noise_mental_education_gini_Work$`Bipolar Disorder %`)
+distribution_schizophrenia = shapiro.test(noise_mental_education_gini_Work$`Schizophrenia %`)
+
+
 
 correlation_depression = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Depression %`, method = "kendall")
 correlation_anxiety = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Anxiety %`, method = "kendall")
 correlation_bipolar = correlation_coefficient = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Bipolar Disorder %`, method = "kendall")
 correlation_eating_disorder = correlation_coefficient = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Eating Disorder %`, method = "kendall")
 correlation_schizophernia = correlation_coefficient = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Schizophrenia %`, method = "kendall")
+
+par(mfrow = c(1, 2)) 
+hist(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, main = "Noise Pollution", xlab = "% of the population exposed to noise pollution", col = "skyblue")
+hist(noise_mental_education_gini_Work$`Depression %`, main = "Depression", xlab = "% of the population suffering from depression", col = "pink")
+hist(noise_mental_education_gini_Work$`Anxiety %`, main = "Anxiety", xlab = "% of the population suffering from anxiety", col = "purple")
+hist(noise_mental_education_gini_Work$`Eating Disorder %`, main = "Eating Disorder %", xlab = "% of the population suffering from eating disorder", col = "red")
+hist(noise_mental_education_gini_Work$`Bipolar Disorder %`, main = "Bipolar Disorder %", xlab = "% of the population suffering from Bipolar disorder", col = "green")
+hist(noise_mental_education_gini_Work$`Schizophrenia %`, main = "Schizophrenia %", xlab = "% of the population suffering from Schizophrenia ", col = "orange")
