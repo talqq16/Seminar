@@ -103,8 +103,9 @@ distribution_anxiety = shapiro.test(noise_mental_education_gini_Work$`Anxiety %`
 distribution_eating = shapiro.test(noise_mental_education_gini_Work$`Eating Disorder %`)
 distribution_bipolar = shapiro.test(noise_mental_education_gini_Work$`Bipolar Disorder %`)
 distribution_schizophrenia = shapiro.test(noise_mental_education_gini_Work$`Schizophrenia %`)
-
-
+distribution_gini = shapiro.test(noise_mental_education_gini_Work$`Gini Index`)
+distribution_MYS = shapiro.test(noise_mental_education_gini_Work$`Avreage Years in School`)
+distribution_work = shapiro.test(noise_mental_education_gini_Work$`Annual Working Hours`)
 
 correlation_depression = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Depression %`, method = "kendall")
 correlation_anxiety = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Anxiety %`, method = "kendall")
@@ -119,3 +120,47 @@ hist(noise_mental_education_gini_Work$`Anxiety %`, main = "Anxiety", xlab = "% o
 hist(noise_mental_education_gini_Work$`Eating Disorder %`, main = "Eating Disorder %", xlab = "% of the population suffering from eating disorder", col = "red")
 hist(noise_mental_education_gini_Work$`Bipolar Disorder %`, main = "Bipolar Disorder %", xlab = "% of the population suffering from Bipolar disorder", col = "green")
 hist(noise_mental_education_gini_Work$`Schizophrenia %`, main = "Schizophrenia %", xlab = "% of the population suffering from Schizophrenia ", col = "orange")
+hist(noise_mental_education_gini_Work$`Gini Index`, main = "GINI Index", xlab = "Gini Index", col = "blue")
+hist(noise_mental_education_gini_Work$`Avreage Years in School`, main = "Avreage Years in School", xlab = "The average number of completed years of education of a population", col = "pink")
+hist(noise_mental_education_gini_Work$`Annual Working Hours`, main = "Annual Working Hours", xlab = "The total number of hours an individual works in a year.", col = "brown")
+
+noise_plot <- noise_mental_education_gini_Work$`Exposed to any noise % of total population`
+depression_plot <- noise_mental_education_gini_Work$`Depression %`
+schizophrenia_plot <- noise_mental_education_gini_Work$`Schizophrenia %`
+Anxiety_plot = noise_mental_education_gini_Work$`Anxiety %`
+bipolar_plot = noise_mental_education_gini_Work$`Bipolar Disorder %`
+eating_plot = noise_mental_education_gini_Work$`Eating Disorder %`
+
+install.packages("ggplot2")
+library(ggplot2)
+
+data <- data.frame(
+  x = noise_mental_education_gini_Work$`Exposed to any noise % of total population`,
+  y1 = noise_mental_education_gini_Work$`Depression %`,
+  y2 = noise_mental_education_gini_Work$`Schizophrenia %`,
+  y3 = noise_mental_education_gini_Work$`Anxiety %`,
+  y4 = noise_mental_education_gini_Work$`Bipolar Disorder %`,
+  y5 = noise_mental_education_gini_Work$`Eating Disorder %`
+)
+
+library(ggplot2)
+
+# Create the scatter plot
+scatter_plot <- ggplot(noise_mental_education_gini_Work, aes(x = `Exposed to any noise % of total population`)) +
+  geom_point(aes(y = `Depression %`, color = "Depression"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Schizophrenia %`, color = "Schizophrenia"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Anxiety %`, color = "Anxiety"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Bipolar Disorder %`, color = "Bipolar Disorder"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Eating Disorder %`, color = "Eating Disorder"), size = 2, alpha = 0.6) +
+  labs(x = "Exposed to any noise % of total population", y = "% of the population suffering from menatl disorder") +
+  ggtitle("Mental Disorders vs. Noise Exposure") +
+  theme_minimal() +
+  scale_color_manual(values = c("blue", "red", "green", "black", "brown"),
+                     labels = c("Depression", "Schizophrenia", "Anxiety", "Bipolar Disorder", "Eating Disorder"))
+
+# Display the scatter plot
+scatter_plot
+
+
+install.packages("lme4")
+library(lme4)
