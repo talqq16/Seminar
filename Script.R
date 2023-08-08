@@ -1,5 +1,6 @@
 setwd("C:/Users/User/Desktop/Geo-informatics Seminar/Seminar/Data")
 library(dplyr)
+library(knitr)
 ##Cleaning the data:
 
 ##Reading the raw data file
@@ -113,16 +114,44 @@ correlation_bipolar = correlation_coefficient = cor(noise_mental_education_gini_
 correlation_eating_disorder = correlation_coefficient = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Eating Disorder %`, method = "kendall")
 correlation_schizophernia = correlation_coefficient = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Schizophrenia %`, method = "kendall")
 
+library(ggplot2)
+
 par(mfrow = c(1, 2)) 
-hist(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, main = "Noise Pollution", xlab = "% of the population exposed to noise pollution", col = "skyblue")
-hist(noise_mental_education_gini_Work$`Depression %`, main = "Depression", xlab = "% of the population suffering from depression", col = "pink")
-hist(noise_mental_education_gini_Work$`Anxiety %`, main = "Anxiety", xlab = "% of the population suffering from anxiety", col = "purple")
-hist(noise_mental_education_gini_Work$`Eating Disorder %`, main = "Eating Disorder %", xlab = "% of the population suffering from eating disorder", col = "red")
-hist(noise_mental_education_gini_Work$`Bipolar Disorder %`, main = "Bipolar Disorder %", xlab = "% of the population suffering from Bipolar disorder", col = "green")
-hist(noise_mental_education_gini_Work$`Schizophrenia %`, main = "Schizophrenia %", xlab = "% of the population suffering from Schizophrenia ", col = "orange")
-hist(noise_mental_education_gini_Work$`Gini Index`, main = "GINI Index", xlab = "Gini Index", col = "blue")
-hist(noise_mental_education_gini_Work$`Avreage Years in School`, main = "Avreage Years in School", xlab = "The average number of completed years of education of a population", col = "pink")
-hist(noise_mental_education_gini_Work$`Annual Working Hours`, main = "Annual Working Hours", xlab = "The total number of hours an individual works in a year.", col = "brown")
+hist_noise <- ggplot(data = noise_mental_education_gini_Work, aes(x = `Exposed to any noise % of total population`)) +
+  geom_histogram(fill = "skyblue", color = "black") +
+  labs(title = "Noise Pollution", x = "% of the population exposed to noise pollution")
+
+hist_depression <- ggplot(data = noise_mental_education_gini_Work, aes(x = `Depression %`)) +
+  geom_histogram(fill = "pink", color = "black") +
+  labs(title = "Depression", x = "% of the population suffering from depression")
+
+hist_anxiety <- ggplot(data = noise_mental_education_gini_Work, aes(x = `Anxiety %`)) +
+  geom_histogram(fill = "purple", color = "black") +
+  labs(title = "Anxiety", x = "% of the population suffering from anxiety")
+
+hist_eating_disorder <- ggplot(data = noise_mental_education_gini_Work, aes(x = `Eating Disorder %`)) +
+  geom_histogram(fill = "red", color = "black") +
+  labs(title = "Eating Disorder %", x = "% of the population suffering from eating disorder")
+
+hist_bipolar <- ggplot(data = noise_mental_education_gini_Work, aes(x = `Bipolar Disorder %`)) +
+  geom_histogram(fill = "green", color = "black") +
+  labs(title = "Bipolar Disorder %", x = "% of the population suffering from Bipolar disorder")
+
+hist_schizophrenia <- ggplot(data = noise_mental_education_gini_Work, aes(x = `Schizophrenia %`)) +
+  geom_histogram(fill = "orange", color = "black") +
+  labs(title = "Schizophrenia %", x = "% of the population suffering from Schizophrenia")
+
+hist_gini <- ggplot(data = noise_mental_education_gini_Work, aes(x = `Gini Index`)) +
+  geom_histogram(fill = "blue", color = "black") +
+  labs(title = "GINI Index", x = "Gini Index")
+
+hist_avg_school_years <- ggplot(data = noise_mental_education_gini_Work, aes(x = `Avreage Years in School`)) +
+  geom_histogram(fill = "pink", color = "black") +
+  labs(title = "Average Years in School", x = "The average number of completed years of education of a population")
+
+hist_annual_working_hours <- ggplot(data = noise_mental_education_gini_Work, aes(x = `Annual Working Hours`)) +
+  geom_histogram(fill = "brown", color = "black") +
+  labs(title = "Annual Working Hours", x = "The total number of hours an individual works in a year")
 
 noise_plot <- noise_mental_education_gini_Work$`Exposed to any noise % of total population`
 depression_plot <- noise_mental_education_gini_Work$`Depression %`
@@ -131,8 +160,6 @@ Anxiety_plot = noise_mental_education_gini_Work$`Anxiety %`
 bipolar_plot = noise_mental_education_gini_Work$`Bipolar Disorder %`
 eating_plot = noise_mental_education_gini_Work$`Eating Disorder %`
 
-install.packages("ggplot2")
-library(ggplot2)
 
 data <- data.frame(
   x = noise_mental_education_gini_Work$`Exposed to any noise % of total population`,
@@ -142,8 +169,6 @@ data <- data.frame(
   y4 = noise_mental_education_gini_Work$`Bipolar Disorder %`,
   y5 = noise_mental_education_gini_Work$`Eating Disorder %`
 )
-
-library(ggplot2)
 
 # Create the scatter plot
 scatter_plot <- ggplot(noise_mental_education_gini_Work, aes(x = `Exposed to any noise % of total population`)) +
@@ -158,9 +183,20 @@ scatter_plot <- ggplot(noise_mental_education_gini_Work, aes(x = `Exposed to any
   scale_color_manual(values = c("blue", "red", "green", "black", "brown"),
                      labels = c("Depression", "Schizophrenia", "Anxiety", "Bipolar Disorder", "Eating Disorder"))
 
-# Display the scatter plot
-scatter_plot
+scatter_plot_with_trendlines <- scatter_plot +
+  geom_smooth(aes(y = `Depression %`), method = "lm", color = "blue", se = FALSE) +
+  geom_smooth(aes(y = `Schizophrenia %`), method = "lm", color = "red", se = FALSE) +
+  geom_smooth(aes(y = `Anxiety %`), method = "lm", color = "green", se = FALSE) +
+  geom_smooth(aes(y = `Bipolar Disorder %`), method = "lm", color = "black", se = FALSE) +
+  geom_smooth(aes(y = `Eating Disorder %`), method = "lm", color = "brown", se = FALSE)
 
+df <- data.frame(P_Value = c(distribution_noise$p.value, distribution_depression$p.value, distribution_anxiety$p.value, distribution_bipolar$p.value, distribution_eating$p.value,distribution_schizophrenia$p.value, distribution_gini$p.value, distribution_MYS$p.value, distribution_work$p.value))
+data_names = c("Noise Pollution", "Depression %", "Anxiety %", "Bipolar", "Eating Disorder", "Schizophrenia", "GINI Index", "Years In School", "Annual Working Hours")
+p_values <- cbind(Variable = data_names, df)
+formatted_p_values <- format(p_values, scientific = FALSE)
 
-install.packages("lme4")
-library(lme4)
+correlation_df = stack(list("Depression" = correlation_depression, "Anxiety " = correlation_anxiety, "Eating Disorder" = correlation_eating_disorder, "Bipolar" = correlation_bipolar, "Schizophrenia" = correlation_schizophernia))
+correlation_df <- correlation_df[, c("ind", "values")]
+colnames(correlation_df) = c("Mental Health Disorder", "Correlation Coefficient Value")
+
+correlation_education = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Avreage Years in School`, method = "kendall")
