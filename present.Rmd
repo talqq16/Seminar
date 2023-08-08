@@ -426,24 +426,22 @@ knitr::kable(correlation_df)
 
 ```
 
-Observations:
-
-All correlation coefficients are relatively small, indicating weak associations between mental health disorders and the percentage of people exposed to noise pollution.
-
-Depression, Anxiety, and Eating Disorder show negative correlations, suggesting that higher levels of noise pollution exposure are weakly associated with slightly lower prevalence or severity of these mental health disorders.
-
-Bipolar exhibits a slightly stronger negative correlation compared to Depression, Anxiety, and Eating Disorder, indicating a slightly stronger negative relationship with the percentage of people exposed to noise pollution.
-
+All correlation coefficients are very small, which suggests that there are very weak correlations between the prevalence of mental health illnesses and the exposure to noise pollution.
+Depression, Anxiety, and Eating Disorder show negative correlations, suggesting that higher levels of noise pollution exposure are weakly associated with slightly lower prevalence of these mental health disorders.
+In comparison to depression, anxiety, and eating disorders, bipolar shows a significantly larger negative association, showing a somewhat stronger negative relationship with the proportion of people exposed to noise pollution.
 Schizophrenia, on the other hand, has a weak positive correlation, implying that higher levels of noise pollution exposure are slightly associated with a higher prevalence or severity of Schizophrenia.
 
 It's crucial to emphasize that correlation does not imply causation. While these correlation coefficients provide insights into the associations between noise pollution exposure and mental health disorders, they do not establish a causal relationship. Further research and analysis would be required to determine the underlying factors and mechanisms contributing to these associations.
-
 In summary, the correlation coefficients suggest that there is a weak relationship between mental health disorders and the percentage of people exposed to noise pollution, with specific disorders showing either weak negative or weak positive associations.
 
+In addition to conducting correlation tests, you can also visually check correlation using scatter plots and trendlines:
 
 ```{r,echo = FALSE, message = FALSE}
 scatter_plot_with_trendlines
 ```
+
+The plot displays the relationship between the percentage of the population exposed to noise pollution and the percentage of the population that is suffering from different mental disorders. Each colored point on the graph represents a specific mental disorder. Trendlines, represented by the straight lines, have been fitted to each set of points to show potential correlations.
+Upon visual inspection, it is evident that the trendlines do not exhibit a consistent upward or downward pattern across the disorders. This lack of uniform trend across the disorders suggests that there is no strong linear correlation between noise exposure and the prevalence of these mental disorders. In other words, the plot indicates that changes in noise exposure do not appear to be closely associated with the variations in the prevalence of these mental disorders, similarly to the Kendall's rank correlation coefficient test.
 
 ---
 
