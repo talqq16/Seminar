@@ -214,6 +214,28 @@ correlation_education = cor(noise_mental_education_gini_Work$`Exposed to any noi
 
 ```
 
+```{r ,echo = FALSE, warning = FALSE, message = FALSE, results= FALSE}
+
+linear_model = lm(cbind(`Depression %`,`Anxiety %` )  ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours`   ,data = noise_mental_education_gini_Work)
+summary(linear_model)
+
+linear_model_2 <- glm(`Bipolar Disorder %` ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours` , data = noise_mental_education_gini_Work, family = poisson(link = "log"))
+summary(linear_model_2)
+
+linear_model_3 <- glm(`Eating Disorder %` ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours` , data = noise_mental_education_gini_Work, family = poisson(link = "log"))
+summary(linear_model_3)
+
+linear_model_4 <- glm(`Schizophrenia %` ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours` , data = noise_mental_education_gini_Work, family = poisson(link = "log"))
+summary(linear_model_4)
+
+coefficents_dep_anx = linear_model$coefficients
+coefficents_bipolar = linear_model_2$coefficients
+coefficents_eating = linear_model_3$coefficients
+cofficents_schizophrenia = linear_model_4$coefficients
+
+```
+
+
 ---
 
 ## Intro
@@ -335,7 +357,7 @@ The calculated value of represents how strongly and in which direction the two v
 
 Since the size of differences between observations in ranked or ordinal data may not be well-defined, I chose Kendall's rank correlation coefficient over other tests. Due to its non-parametric nature and lack of assumptions regarding the underlying distribution of the data, it is effective when analyzing data that is not typically regarded with suspicion, such as some of my data.
 
-3)The third test I performed was a <b>multiple variable generalized linear regression</b>, which differs from a regular linear regression in being flexible and suitable for situations where the assumptions of ordinary linear regression, such as normality and constant variance of errors, may not hold.
+3)The third test I performed was a  <b>linear regression model</b> and <b>multiple variable generalized linear regression</b>, which differs from regular linear regression model in being flexible and suitable for situations where the assumptions of ordinary linear regression, such as normality and constant variance of errors, may not hold.
 I can model the link between predictors and continuous response variables by doing linear regression.
 In my study, the response variables are the percentages of the population who experience depression, anxiety, bipolar disorder, eating disorders, and schizophrenia. The predictor variables are the percentage of the population exposed to noise pollution, the mean years of schooling, the GINI index, and lastly, the average number of hours worked annually.
 
@@ -358,7 +380,12 @@ With a map of all of Europe in hand, I joined my final data table using the coun
 -The percentages of the population exposed to noise pollution.
 -GINI Index, the average number of years spent in education, and the average annual working hours.
 
-2)<b>IDW</b>
+2)<b>IDW:</b>
+
+IDW is one methods that may help me in learning more about the spatial distribution of noise pollution in Europe. By using this tool in ArcGIS pro I can convert vector shapefiles (in my case, polygons that were then converted to points) into raster images. In this manner, I can see the regions of Europe that are more impacted by noise pollution as opposed to the most polluted countries.
+
+Inverse Distance Weighting (IDW) is a technique used in geography and spatial analysis to estimate values at unsampled locations based on nearby measured points. It assigns more weight to points closer to the target location and less to those farther away. The weights are inversely proportional to the distance from the target location, with the final estimated value determined by dividing the weights. (How Inverse Distance Weighted Interpolation Works—ArcGIS pro | Documentation, n.d.)
+
 
 3)<b>Hot Spot Analysis</b>
 
@@ -442,6 +469,41 @@ scatter_plot_with_trendlines
 
 The plot displays the relationship between the percentage of the population exposed to noise pollution and the percentage of the population that is suffering from different mental disorders. Each colored point on the graph represents a specific mental disorder. Trendlines, represented by the straight lines, have been fitted to each set of points to show potential correlations.
 Upon visual inspection, it is evident that the trendlines do not exhibit a consistent upward or downward pattern across the disorders. This lack of uniform trend across the disorders suggests that there is no strong linear correlation between noise exposure and the prevalence of these mental disorders. In other words, the plot indicates that changes in noise exposure do not appear to be closely associated with the variations in the prevalence of these mental disorders, similarly to the Kendall's rank correlation coefficient test.
+
+<span style="font-size: 22x; text-decoration: underline;">3.Linear regression:</span>
+
+
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(coefficents_dep_anx)
+
+```
+
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(coefficents_bipolar)
+
+```
+
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(coefficents_eating)
+
+```
+
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(cofficents_schizophrenia)
+
+```
+
+<span style="font-size: 22x; text-decoration: underline;">4.IDW:</span>
+
+In order to preform the IDW on my map i had to convert my polygons to points, one for every country. The z-value field was the percentage of the population that is exposed to noise pollution in each country.
+
+```{r,echo = FALSE}
+knitr::include_graphics("IDW.jpg")
+
+```
+
+The "value" represents the estimated percentage of people who are exposed to noise pollution.
+By looking at the map I can see that most of the noise pollution is concentrated mainly at the central part of Europe, the Baltic states and in south-eastern Europe (mainly Bulgaria).
 
 ---
 

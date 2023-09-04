@@ -200,3 +200,23 @@ correlation_df <- correlation_df[, c("ind", "values")]
 colnames(correlation_df) = c("Mental Health Disorder", "Correlation Coefficient Value")
 
 correlation_education = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Avreage Years in School`, method = "kendall")
+
+scatter_plot_with_trendlines
+
+
+linear_model = lm(cbind(`Depression %`,`Anxiety %` )  ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours`   ,data = noise_mental_education_gini_Work)
+summary(linear_model)
+
+linear_model_2 <- glm(`Bipolar Disorder %` ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours` , data = noise_mental_education_gini_Work, family = poisson(link = "log"))
+summary(linear_model_2)
+
+linear_model_3 <- glm(`Eating Disorder %` ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours` , data = noise_mental_education_gini_Work, family = poisson(link = "log"))
+summary(linear_model_3)
+
+linear_model_4 <- glm(`Schizophrenia %` ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours` , data = noise_mental_education_gini_Work, family = poisson(link = "log"))
+summary(linear_model_4)
+
+coefficents_dep_anx = linear_model$coefficients
+coefficents_bipolar = linear_model_2$coefficients
+coefficents_eating = linear_model_3$coefficients
+cofficents_schizophrenia = linear_model_4$coefficients
