@@ -216,7 +216,54 @@ summary(linear_model_3)
 linear_model_4 <- glm(`Schizophrenia %` ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours` , data = noise_mental_education_gini_Work, family = poisson(link = "log"))
 summary(linear_model_4)
 
-coefficents_dep_anx = linear_model$coefficients
-coefficents_bipolar = linear_model_2$coefficients
-coefficents_eating = linear_model_3$coefficients
-cofficents_schizophrenia = linear_model_4$coefficients
+summary_model_1 = summary(linear_model)
+summary_model_2 = summary(linear_model_2)
+summary_model_3 = summary(linear_model_3)
+summary_model_4 = summary(linear_model_4)
+
+dep_coe = summary_model_1$`Response Depression %`$coefficients
+anx_coe = summary_model_1$`Response Anxiety %`$coefficients
+dep_coe_df = as.data.frame(dep_coe)
+anx_coe_df = as.data.frame(anx_coe)
+dep_coe_df$Coefficient = dep_coe_df$Estimate
+anx_coe_df$Coefficient = anx_coe_df$Estimate
+anx_coe_df$Estimate = NULL
+dep_coe_df$Estimate = NULL
+anx_coe_df$`t value` = NULL
+dep_coe_df$`t value` = NULL
+anx_coe_df$`Std. Error` = NULL
+dep_coe_df$`Std. Error` = NULL
+dep_coe_df$p_value = dep_coe_df$`Pr(>|t|)`
+anx_coe_df$p_value = anx_coe_df$`Pr(>|t|)`
+dep_coe_df$`Pr(>|t|)` = NULL
+anx_coe_df$`Pr(>|t|)` = NULL
+
+bipolar_coe = summary_model_2$coefficients
+bipolar_coe_df = as.data.frame(bipolar_coe)
+bipolar_coe_df$Coefficient = bipolar_coe_df$Estimate
+bipolar_coe_df$p_value = bipolar_coe_df$`Pr(>|z|)`
+bipolar_coe_df$Estimate = NULL
+bipolar_coe_df$`t value` = NULL
+bipolar_coe_df$`Std. Error` = NULL
+bipolar_coe_df$`Pr(>|z|)` = NULL
+bipolar_coe_df$`z value` = NULL
+
+eating_coe = summary_model_3$coefficients
+eating_coe_df = as.data.frame(eating_coe)
+eating_coe_df$Coefficient = eating_coe_df$Estimate
+eating_coe_df$p_value = eating_coe_df$`Pr(>|z|)`
+eating_coe_df$Estimate = NULL
+eating_coe_df$`t value` = NULL
+eating_coe_df$`Std. Error` = NULL
+eating_coe_df$`Pr(>|z|)` = NULL
+eating_coe_df$`z value` = NULL
+
+schiz_coe = summary_model_4$coefficients
+schiz_coe_df = as.data.frame(schiz_coe)
+schiz_coe_df$Coefficient = schiz_coe_df$Estimate
+schiz_coe_df$p_value = schiz_coe_df$`Pr(>|z|)`
+schiz_coe_df$Estimate = NULL
+schiz_coe_df$`t value` = NULL
+schiz_coe_df$`Std. Error` = NULL
+schiz_coe_df$`Pr(>|z|)` = NULL
+schiz_coe_df$`z value` = NULL

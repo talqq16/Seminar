@@ -228,10 +228,57 @@ summary(linear_model_3)
 linear_model_4 <- glm(`Schizophrenia %` ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours` , data = noise_mental_education_gini_Work, family = poisson(link = "log"))
 summary(linear_model_4)
 
-coefficents_dep_anx = linear_model$coefficients
-coefficents_bipolar = linear_model_2$coefficients
-coefficents_eating = linear_model_3$coefficients
-cofficents_schizophrenia = linear_model_4$coefficients
+summary_model_1 = summary(linear_model)
+summary_model_2 = summary(linear_model_2)
+summary_model_3 = summary(linear_model_3)
+summary_model_4 = summary(linear_model_4)
+
+dep_coe = summary_model_1$`Response Depression %`$coefficients
+anx_coe = summary_model_1$`Response Anxiety %`$coefficients
+dep_coe_df = as.data.frame(dep_coe)
+anx_coe_df = as.data.frame(anx_coe)
+dep_coe_df$Coefficient = dep_coe_df$Estimate
+anx_coe_df$Coefficient = anx_coe_df$Estimate
+anx_coe_df$Estimate = NULL
+dep_coe_df$Estimate = NULL
+anx_coe_df$`t value` = NULL
+dep_coe_df$`t value` = NULL
+anx_coe_df$`Std. Error` = NULL
+dep_coe_df$`Std. Error` = NULL
+dep_coe_df$p_value = dep_coe_df$`Pr(>|t|)`
+anx_coe_df$p_value = anx_coe_df$`Pr(>|t|)`
+dep_coe_df$`Pr(>|t|)` = NULL
+anx_coe_df$`Pr(>|t|)` = NULL
+
+bipolar_coe = summary_model_2$coefficients
+bipolar_coe_df = as.data.frame(bipolar_coe)
+bipolar_coe_df$Coefficient = bipolar_coe_df$Estimate
+bipolar_coe_df$p_value = bipolar_coe_df$`Pr(>|z|)`
+bipolar_coe_df$Estimate = NULL
+bipolar_coe_df$`t value` = NULL
+bipolar_coe_df$`Std. Error` = NULL
+bipolar_coe_df$`Pr(>|z|)` = NULL
+bipolar_coe_df$`z value` = NULL
+
+eating_coe = summary_model_3$coefficients
+eating_coe_df = as.data.frame(eating_coe)
+eating_coe_df$Coefficient = eating_coe_df$Estimate
+eating_coe_df$p_value = eating_coe_df$`Pr(>|z|)`
+eating_coe_df$Estimate = NULL
+eating_coe_df$`t value` = NULL
+eating_coe_df$`Std. Error` = NULL
+eating_coe_df$`Pr(>|z|)` = NULL
+eating_coe_df$`z value` = NULL
+
+schiz_coe = summary_model_4$coefficients
+schiz_coe_df = as.data.frame(schiz_coe)
+schiz_coe_df$Coefficient = schiz_coe_df$Estimate
+schiz_coe_df$p_value = schiz_coe_df$`Pr(>|z|)`
+schiz_coe_df$Estimate = NULL
+schiz_coe_df$`t value` = NULL
+schiz_coe_df$`Std. Error` = NULL
+schiz_coe_df$`Pr(>|z|)` = NULL
+schiz_coe_df$`z value` = NULL
 
 ```
 
@@ -444,7 +491,7 @@ This discrepancy between the p-values and the histograms can be explained by the
 
 Histograms, on the other hand, are graphical representations that display the distribution of data by grouping it into bins. With small sample sizes, the number of data points available for creating the histogram is limited. As a result, the histogram may not accurately reflect the true underlying distribution of the data. The appearance of the histogram might suggest non-normality due to random fluctuations, even if the data is truly drawn from a normal distribution.
 
-<span style="font-size: 22x; text-decoration: underline;">2.Correlation Test:</span>
+<span style="font-size: 22px; text-decoration: underline;">2.Correlation Test:</span>.
 
 I ran the <b>Kendall's rank correlation coefficient test</b> on each of the mental health disorder and got the following:
 
@@ -470,30 +517,49 @@ scatter_plot_with_trendlines
 The plot displays the relationship between the percentage of the population exposed to noise pollution and the percentage of the population that is suffering from different mental disorders. Each colored point on the graph represents a specific mental disorder. Trendlines, represented by the straight lines, have been fitted to each set of points to show potential correlations.
 Upon visual inspection, it is evident that the trendlines do not exhibit a consistent upward or downward pattern across the disorders. This lack of uniform trend across the disorders suggests that there is no strong linear correlation between noise exposure and the prevalence of these mental disorders. In other words, the plot indicates that changes in noise exposure do not appear to be closely associated with the variations in the prevalence of these mental disorders, similarly to the Kendall's rank correlation coefficient test.
 
-<span style="font-size: 22x; text-decoration: underline;">3.Linear regression:</span>
+<span style="font-size: 22px; text-decoration: underline;">3.Linear Regression Model:</span>
 
+
+I ran the linear regression model separately on each of my response variables using my permanent set of predictor variables (which are: the percentage of the population exposed to noise pollution, the mean years of schooling, the GINI index, and lastly, the average number of hours worked annually), and got the following coefficients and p values: 
+
+Using my constant set of predictor variables I ran the linear regression model separately on each of my response variables and received the coefficients and p values listed below:
+
+<u>Depression:</u>
 
 ```{r, echo = FALSE, message = FALSE}
-knitr::kable(coefficents_dep_anx)
+knitr::kable(dep_coe_df)
 
 ```
 
+<u>Anxiety:</u>
+
 ```{r, echo = FALSE, message = FALSE}
-knitr::kable(coefficents_bipolar)
+knitr::kable(anx_coe_df)
 
 ```
 
+<u>Bipolar Disorder:</u>
+
 ```{r, echo = FALSE, message = FALSE}
-knitr::kable(coefficents_eating)
+knitr::kable(bipolar_coe_df)
 
 ```
 
+<u>Eating Disorders:</u>
+
 ```{r, echo = FALSE, message = FALSE}
-knitr::kable(cofficents_schizophrenia)
+knitr::kable(eating_coe_df)
 
 ```
 
-<span style="font-size: 22x; text-decoration: underline;">4.IDW:</span>
+<u>Schizophrenia:</u>
+
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(schiz_coe_df)
+
+```
+
+<span style="font-size: 22px; text-decoration: underline;">4.IDW:</span>
 
 In order to preform the IDW on my map i had to convert my polygons to points, one for every country. The z-value field was the percentage of the population that is exposed to noise pollution in each country.
 
