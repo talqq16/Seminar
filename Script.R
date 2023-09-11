@@ -216,6 +216,8 @@ summary(linear_model_3)
 linear_model_4 <- glm(`Schizophrenia %` ~ `Exposed to any noise % of total population` + `Gini Index` + `Avreage Years in School` + `Annual Working Hours` , data = noise_mental_education_gini_Work, family = poisson(link = "log"))
 summary(linear_model_4)
 
+
+
 summary_model_1 = summary(linear_model)
 summary_model_2 = summary(linear_model_2)
 summary_model_3 = summary(linear_model_3)
@@ -267,3 +269,8 @@ schiz_coe_df$`t value` = NULL
 schiz_coe_df$`Std. Error` = NULL
 schiz_coe_df$`Pr(>|z|)` = NULL
 schiz_coe_df$`z value` = NULL
+
+
+summary(linear_model)
+
+plot(linear_model)
