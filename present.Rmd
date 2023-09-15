@@ -1,5 +1,5 @@
 ---
-title: "What are the Effects of Noise Pollution on Our Mental Health?"
+title: "Is there a link between traffic-related noise pollution and mental health?"
 author: "Tal Bracha"
 date: "`r Sys.Date()`"
 output:
@@ -418,11 +418,15 @@ The additional predictor factors I chose to include are supported by research th
 
 <b>*ArcGIS Pro was used for all the mapping done in this paper.</b>
 
+An essential component of my research involves mapping. I can find out more about the spatial distribution of noise pollution levels in Europe using the various ArcGIS Pro tools. I have the ability to locate regions with statistically significant clusters of high noise levels or determine if noise pollution is dispersed randomly or follows geographical patterns.
+
 I began the mapping process by downloading a shapefile containing polygons for each European country, which included all of the countries. This information was provided by Eurostat, the statistical office of the European Union (EU), which is in charge of disseminating high-quality statistical data to assist in the decision-making of EU institutions, member states, enterprises, academics, and the general public.
 
 With a map of all of Europe in hand, I joined my final data table using the country name as the primary key after completing all of the data scrubbing with the map table.
 
-1)I then proceeded to create <b>heat maps</b> to better visualize my data. I produced heat maps based on polygons for all the information I gathered, including:
+1)<b>Heat Maps:</b>
+
+I then proceeded to create heat maps to better visualize my data. I produced heat maps based on polygons for all the information I gathered, including:
 
 * The percentages of each mental health condition in the population. 
 
@@ -439,6 +443,8 @@ by using IDW I can learn more about the spatial distribution of noise pollution 
 
 3)<b>Hot Spot Analysis:</b>
 
+Another useful tool to evaluate the spatial distribution is the Hot Spot Analysis, This tool identifies statistically significant spatial clusters of high values (hot spots) and low values (cold spots) using Getis-Ord Gi statistic. It creates an Output Feature Class with a z-score, p-value, and confidence level bin field (Gi_Bin) for each feature in the Input Feature Class.
+
 <span style="font-size: 22px; text-decoration: underline;">Limitations:</span>.
 
 It's crucial to note that I began the data collection process with 36 countries but ended up with 27 since several of the countries had no data accessible. The countries that were eliminated from the research are:
@@ -453,13 +459,15 @@ It's crucial to note that I began the data collection process with 36 countries 
 
 Austria, Belgium, Bulgaria, Croatia, Denmark, Estonia, Finland, France, Germany, Hungary, Iceland, Ireland, Italy, Latvia, Lithuania, Luxembourg, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, Switzerland, and the United Kingdom were the nations that remained.
 
+Dropping from 36 to 27 countries means that my hotspot analysis wasn't as accurate as it may have been since the recommendation is to have at least 30 input features.
+
 ---
 
 ## Results
 
 ---
 
-<span style="font-size: 28px; text-decoration: underline;">Statistical Analysis</span>
+<span style="font-size: 28px; text-decoration: underline;">Statistical Analysis Results</span>
 
 <span style="font-size: 22px; text-decoration: underline;">1.Normality Test:</span>
 
@@ -583,7 +591,7 @@ In conclusion, none of the mental health disorders I examined have substantial o
 This shows that there may not be any association at all between these mental health issues and the selected predictors.
 
 
-<span style="font-size: 28px; text-decoration: underline;">Mapping</span>
+<span style="font-size: 28px; text-decoration: underline;">Mapping Results</span>
 
 <span style="font-size: 22px; text-decoration: underline;">1.Heat Maps:</span>
 
@@ -598,6 +606,8 @@ knitr::include_graphics("Heat Map.jpg")
 
 Additionally, I produced heat maps for the Gini index, mean years of schooling, mean number of hours worked annually, and mental disorders. The appendices section contains those.
 
+<span style="font-size: 22px; text-decoration: underline;">2.IDW:</span>
+
 In order to preform the IDW on my map i had to convert my polygons to points, one for every country. After running IDW, the following map was produced:
 
 ```{r,echo = FALSE}
@@ -608,6 +618,9 @@ knitr::include_graphics("IDW.jpg")
 The "value" represents the estimated percentage of people who are exposed to noise pollution.
 By looking at the map I can see that most of the noise pollution is concentrated mainly at the central part of Europe, the Baltic states and in south-eastern Europe (mainly Bulgaria).
 While there are low concentrations of noise pollution in the Iberian Peninsula, the south of central Europe, the east of northern Europe, and the southeast of France.
+
+<span style="font-size: 22px; text-decoration: underline;">3.Hot Spot Analysis:</span>
+
 
 ---
 
