@@ -608,7 +608,7 @@ Additionally, I produced heat maps for the Gini index, mean years of schooling, 
 
 <span style="font-size: 22px; text-decoration: underline;">2.IDW:</span>
 
-In order to preform the IDW on my map i had to convert my polygons to points, one for every country. After running IDW, the following map was produced:
+In order to perform the IDW on my map i had to convert my polygons to points, one for every country. After running IDW, the following map was produced:
 
 ```{r,echo = FALSE}
 knitr::include_graphics("IDW.jpg")
@@ -621,8 +621,14 @@ While there are low concentrations of noise pollution in the Iberian Peninsula, 
 
 <span style="font-size: 22px; text-decoration: underline;">3.Hot Spot Analysis:</span>
 
+In order to perform the hot spot analysis, I had to select the polygon layer of the EU countries. As the input field, I chose the percentage of that nation's population exposed to noise pollution, as well as the kind of spatial relationship conceptualization, the "fixed distance band", which according to the ESRI website is best suited for the type of research I'm conducting. I received the following output map:
 
----
+```{r,echo = FALSE}
+knitr::include_graphics("Hot Spot Analysis.png")
+
+```
+
+I can determine with 95% certainty that the Slovakia-Hungary-Slovenia region is a noise pollution hot spot by looking at the output map. If I lower my confidence to 90%, I can also include Austria in this hotspot. Also identified as a hot zone with 90% confidence was Lithuania. There were no cold spots found.
 
 ## Appendices:
 
