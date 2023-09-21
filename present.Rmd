@@ -1,5 +1,5 @@
 ---
-title: "Is there a link between traffic-related noise pollution and mental health?"
+title: "Does exposure to traffic-related noise pollution have an impact on mental health?"
 author: "Tal Bracha"
 date: "`r Sys.Date()`"
 output:
@@ -285,7 +285,7 @@ schiz_coe_df$`z value` = NULL
 
 ---
 
-## Intro
+## Introduction
 
 ---
 
@@ -300,7 +300,13 @@ With a focus on the underlying processes and potential health effects, this stud
 ## Litrature Review
 
 ---
- 
+
+<span style="font-size: 23px; text-decoration: underline;"> Literature Review Introduction:</span>
+
+This literature review dives into the connection between noise pollution and mental health. I will explore various studies and research to better understand how the noise around us can affect our mental state. From the noise regulations set by environmental agencies to the everyday hustle of city life, my aim is to uncover how noise pollution influences our mental health.
+
+In addition, I'll look at papers that display how various socioeconomic indicators, including the Gini index, the average number of years spent in school, and long working hours, are affecting mental health.
+
 <span style="font-size: 23px; text-decoration: underline;"> Literature 0 - EPA Identifies Noise Levels Affecting Health and Welfare:</span>
 
 In order to protect the public health and welfare from hearing loss, annoyance, and activity interference, the Environmental Protection Agency (EPA) has published a document titled "Information on Levels of Environmental Noise Requisite to Protect Public Health and Welfare with an Adequate Margin of Safety." According to the paper, noise levels of 55 decibels outside and 45 decibels indoors will avoid activity interference and irritation, but exposure to 70 decibels of noise over a 24-hour period will prevent detectable hearing loss over a lifetime. These noise levels are averages of acoustic energy throughout time rather than peak values. Depending on the area's usage, the EPA regulation specifies varied noise limits, with 45 dB being connected with indoor living places, hospitals, and schools. For outdoor locations where there is human activity, 55 decibels have been determined, and 70 decibels should be used everywhere to avoid hearing damage. State and local governments can utilize the information in the paper to establish noise limits, but other pertinent aspects including costs and benefits, local ambitions, and tools available to regulate environmental noise must also be taken into account.
@@ -354,7 +360,7 @@ This article explores the connection between clerical employees' excessive hours
 
 ---
 
-<span style="font-size: 27px; font-weight: bold;">Data Description</span>
+<span style="font-size: 22px; text-decoration: underline;">Data Description</span>.
 
 <span style="font-size: 22px; text-decoration: underline;">My 3 main data sets are:</span>.
 
@@ -387,13 +393,17 @@ The final piece of information thought to be related to depression is the <b>num
 
 <b>*R was used for all of my statistical analysis.</b>
 
-1)The <b>Shapiro-Wilk test</b>, a statistical test used to evaluate the normality of a dataset, was the first test I ran to see if my data was normally distributed. The test determines if a sample of data is representative of a population that is normally distributed.
+1)<b>Shapiro-Wilk test</b>:
+
+The first test I made was the Shapiro-Wilk test, a statistical test used to evaluate the normality of a dataset, was the first test I ran to see if my data was normally distributed. The test determines if a sample of data is representative of a population that is normally distributed.
 The Shapiro-Wilk test's null hypothesis is that the data have a normal distribution. The alternative hypothesis is that a normal distribution is not followed by the data.
 In comparison to other normality tests, the Shapiro-Wilk test is more potent since it considers both the data's mean and variance, especially for small to moderate sample sizes, like mine.
 It's crucial to remember that the Shapiro-Wilk test is sensitive to non-normality, particularly in the distribution's tails. Because of this, even little deviations from normalcy may result in the null hypothesis being rejected, especially with large sample numbers. (Malato, 2023)
 I also used histograms to visually analyze my data to see if it was normally distributed.
 
-2)The second test I conducted was the <b>Kendall's rank correlation coefficient</b>, which measures whether two variables are related or dependent on one another. It is frequently used to evaluate how comparable various data sets' ranks or ordering of observations are.
+2)<b>Kendall's rank correlation coefficient test:</b>
+
+The second test I conducted was the Kendall's rank correlation coefficient, which measures whether two variables are related or dependent on one another. It is frequently used to evaluate how comparable various data sets' ranks or ordering of observations are.
 The calculated value of represents how strongly and in which direction the two variables are associated:
 
 * The rankings of the two variables are the same if = 1, which denotes a perfect positive rank correlation.
@@ -404,7 +414,10 @@ The calculated value of represents how strongly and in which direction the two v
 
 Since the size of differences between observations in ranked or ordinal data may not be well-defined, I chose Kendall's rank correlation coefficient over other tests. Due to its non-parametric nature and lack of assumptions regarding the underlying distribution of the data, it is effective when analyzing data that is not typically regarded with suspicion, such as some of my data. (Abdi, 2007)
 
-3)The third test I performed was a  <b>linear regression model</b> and <b>multiple variable generalized linear regression</b>, which differs from regular linear regression model in being flexible and suitable for situations where the assumptions of ordinary linear regression, such as normality and constant variance of errors, may not hold.
+3)<b>Linear regression model and multiple variable generalized linear regression:</b>
+
+
+The third test I performed was a linear regression model and multiple variable generalized linear regression, which differs from regular linear regression model in being flexible and suitable for situations where the assumptions of ordinary linear regression, such as normality and constant variance of errors, may not hold.
 I can model the link between predictors and continuous response variables by doing linear regression.
 In my study, the response variables are the percentages of the population who experience depression, anxiety, bipolar disorder, eating disorders, and schizophrenia. The predictor variables are the percentage of the population exposed to noise pollution, the mean years of schooling, the GINI index, and lastly, the average number of hours worked annually.
 
@@ -438,7 +451,7 @@ I then proceeded to create heat maps to better visualize my data. I produced hea
 
 Inverse Distance Weighting (IDW) is a technique used in geography and spatial analysis to estimate values at unsampled locations based on nearby measured points. It assigns more weight to points closer to the target location and less to those farther away. The weights are inversely proportional to the distance from the target location, with the final estimated value determined by dividing the weights. (How Inverse Distance Weighted Interpolation Works—ArcGIS pro | Documentation, n.d.)
 
-by using IDW I can learn more about the spatial distribution of noise pollution in Europe. By using this tool in ArcGIS pro I can convert vector shapefiles (in my case, polygons that were then converted to points) into raster images. In this manner, I can see the regions of Europe that are more impacted by noise pollution as opposed to the most polluted countries.
+By using IDW I can learn more about the spatial distribution of noise pollution in Europe. By using this tool in ArcGIS pro I can convert vector shapefiles (in my case, polygons that were then converted to points) into raster images. In this manner, I can see the regions of Europe that are more impacted by noise pollution as opposed to the most polluted countries.
 
 
 3)<b>Hot Spot Analysis:</b>
@@ -629,6 +642,9 @@ knitr::include_graphics("Hot Spot Analysis.png")
 ```
 
 I can determine with 95% certainty that the Slovakia-Hungary-Slovenia region is a noise pollution hot spot by looking at the output map. If I lower my confidence to 90%, I can also include Austria in this hotspot. Also identified as a hot zone with 90% confidence was Lithuania. There were no cold spots found.
+
+## Conclusions:
+
 
 ## Appendices:
 
