@@ -1,11 +1,9 @@
 ---
-title: "Does exposure to traffic-related noise pollution have an impact on mental health?"
-author: "Tal Bracha"
-date: "`r Sys.Date()`"
-output:
-  prettydoc::html_pretty:
-    theme: yeti
-   
+title: "GIT Seminar"
+subtitle: "Does traffic-related noise pollution affect our mental health?"
+author: Tal Bracha
+date: "September 2023"
+output: rmdformats::readthedown
 ---
    
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
@@ -282,15 +280,26 @@ schiz_coe_df$`z value` = NULL
 
 ```
 
+<div style="text-align:center; font-weight:bold;">
+### The Department of Environmental, Geoinformatics, and Urban Planning Sciences
+### Author: Tal Bracha
+### Year: 2023
+### Advisor: Prof. Itai Kloog
+</div>
+---
+
+# Abstract 
+
+This paper investigates the potential impact of exposure to traffic-related noise pollution on mental health, utilizing a multidisciplinary approach that combines statistical analysis, geospatial techniques, and regression modeling. Data from 27 European countries were analyzed to assess the relationship between noise pollution exposure and the prevalence of various mental health disorders, including depression, anxiety, bipolar disorder, eating disorders, and schizophrenia. The study also explored the influence of socio-economic factors, such as the GINI Index, average years of schooling, and annual working hours, on mental health outcomes. The findings suggest that while some weak correlations exist between noise pollution exposure and specific mental health disorders, these associations do not imply causation. Geospatial analysis revealed hotspots of noise pollution in central and eastern Europe, which could guide future intervention strategies. Ultimately, this study underscores the complexity of the relationship between noise pollution and mental health, emphasizing the need for further research and policy interventions to better understand and address this issue.
 
 ---
 
-## Introduction
+# Introduction
 
 ---
 
 Concern over the detrimental consequences of traffic noise on mental health, especially the risk of depression, has grown in recent years. Millions of individuals worldwide are impacted by the widespread environmental stressor known as traffic noise, which has been shown to have negative impacts on physical health. Little is known about how traffic noise affects mental health, particularly depression.
-Exposure to excessive noise has been related to a number of physical and mental health issues, including cardiovascular disease, sleep disorders, and anxiety. Noise pollution is a severe health risk. The influence of traffic noise on mental health is a growing field of research since it contributes significantly to noise pollution in metropolitan settings.
+Exposure to excessive noise has been related to a number of physical and mental health issues, including cardiovascular disease, sleep disorders, and anxiety. Noise pollution is a severe health risk (Stansfeld & Matheson, 2003). The influence of traffic noise on mental health is a growing field of research since it contributes significantly to noise pollution in metropolitan settings.
 Several research have indicated a link between exposure to traffic noise and a higher risk of developing depression, although the underlying processes are still not entirely understood. While some experts contend that traffic noise may raise the likelihood of depression by interfering with sleep and elevating stress levels, others contend that it may have an impact on the brain's ability to think clearly and regulate emotions.
 For successful methods to reduce the detrimental impacts of noise pollution on mental health, it is crucial to comprehend the link between traffic noise and depression. A deeper understanding of the connection between these two variables is essential for public health given the high incidence of traffic noise exposure in metropolitan settings and the large burden of depression.
 With a focus on the underlying processes and potential health effects, this study intends to examine the available research on the relationship between traffic noise and depression. The results of this study might help politicians and urban planners create practical plans to lessen the negative effects of traffic noise on mental health and raise standards of living generally in cities.
@@ -301,25 +310,25 @@ With a focus on the underlying processes and potential health effects, this stud
 
 ---
 
-<span style="font-size: 23px; text-decoration: underline;"> Literature Review Introduction:</span>
+## Literature Review Introduction
 
 This literature review dives into the connection between noise pollution and mental health. I will explore various studies and research to better understand how the noise around us can affect our mental state. From the noise regulations set by environmental agencies to the everyday hustle of city life, my aim is to uncover how noise pollution influences our mental health.
 
 In addition, I'll look at papers that display how various socioeconomic indicators, including the Gini index, the average number of years spent in school, and long working hours, are affecting mental health.
 
-<span style="font-size: 23px; text-decoration: underline;"> Literature 0 - EPA Identifies Noise Levels Affecting Health and Welfare:</span>
+## Literature 0 - EPA Identifies Noise Levels Affecting Health and Welfare
 
 In order to protect the public health and welfare from hearing loss, annoyance, and activity interference, the Environmental Protection Agency (EPA) has published a document titled "Information on Levels of Environmental Noise Requisite to Protect Public Health and Welfare with an Adequate Margin of Safety." According to the paper, noise levels of 55 decibels outside and 45 decibels indoors will avoid activity interference and irritation, but exposure to 70 decibels of noise over a 24-hour period will prevent detectable hearing loss over a lifetime. These noise levels are averages of acoustic energy throughout time rather than peak values. Depending on the area's usage, the EPA regulation specifies varied noise limits, with 45 dB being connected with indoor living places, hospitals, and schools. For outdoor locations where there is human activity, 55 decibels have been determined, and 70 decibels should be used everywhere to avoid hearing damage. State and local governments can utilize the information in the paper to establish noise limits, but other pertinent aspects including costs and benefits, local ambitions, and tools available to regulate environmental noise must also be taken into account.
 
 
-<span style="font-size: 23px; text-decoration: underline;"> Literature 1 – Study of physio-psychological effects on traffic wardens due to traffic noise pollution; exposure-effect relation:</span>
+## Literature 1 – Study of physio-psychological effects on traffic wardens due to traffic noise pollution; exposure-effect relation 
 
 This study examined and assessed the psychological and physical consequences of traffic noise on traffic wardens in Taxila and Islamabad, two cities in Pakistan. The results showed that noise levels varied from 85 to 106 dB, which is prohibited by OSHA. The psychological symptoms seen in the wardens were aggravated melancholy (58%), stress (65%), public conflict (71%), impatience and irritation (54%), behavioral repercussions (59%), and speech interference (56%). The physiological symptoms were high blood pressure (87%), tense muscles (64%), weariness (48%), poor performance (55%), loss of attention (93%), hearing loss (69%), headache (74%), and cardiovascular issues (71%). A regression test was carried out in Excel to ascertain the link between exposure duration and the impacts of traffic noise on the wardens.
 As exposure duration increased, the percentage of psychological and physical symptoms changed. Noise pollution is caused by unwanted sound that varies in frequency and acoustic pressure and lacks a predictable pattern. The characteristics of noise depend on the characteristics of the traffic and the road, such as the road gradient, surface type, surrounding topography, grade of the road, the number and type of vehicles, the age of the vehicles passing, the speed of the vehicles, the type of goods transported, the packing of the goods in the vehicles, the sound pressure of the horn, the type of brakes, and the behavior of the drivers. Reducing noise pollution at the source, such as the car and road, is the most efficient approach to do it. The air intake system, exhaust system, tires, and engine all contribute differently to vehicle noise, with the air intake system contributing 9%, the exhaust system 27%, the tires 30%, and the engine 34%.
 At 70 km/h, tire noise predominates over other interior noise sources, so lowering the speed at which cars travel on crowded highways significantly lowers the noise level. It is important to control noise pollution to prevent any negative impacts, as excessive noise levels harm people's health and cause financial losses.
 
 
-<span style="font-size: 23px; text-decoration: underline;"> Literature 2 - Noise Pollution-Sources, Effects and Control:</span>
+## Literature 2 - Noise Pollution-Sources, Effects and Control
 
 The first section of the article discusses the several types of noise pollution, both natural and man-made. Thunderstorms, earthquakes, and animal sounds are examples of natural sources, whereas automobiles, trains, and aircraft, as well as industry and construction, as well as recreational noise, are examples of man-made sources (e.g. concerts, sporting events).
 After that, the writers go on to discuss how noise pollution affects people's health and wellbeing. Many adverse health effects, such as hearing loss, sleep disturbance, cardiovascular disease, and mental health issues including anxiety and depression, can arise from exposure to excessive noise. Children, the elderly, and those with pre-existing medical disorders are among the categories who might be most negatively impacted by noise pollution.
@@ -328,7 +337,7 @@ The article also covers methods for reducing noise pollution. They include actio
 Overall, the essay offers a thorough analysis of the causes, impacts, and measures to reduce noise pollution, emphasizing the need of tackling this ubiquitous and frequently disregarded environmental problem.
 
 
-<span style="font-size: 23px; text-decoration: underline;"> Literature 3 - Noise pollution: non-auditory effects on health:</span>
+## Literature 3 - Noise pollution: non-auditory effects on health
 
 The non-auditory consequences of noise pollution on our health were explored in this paper by Stansfeld & Matheson in 2003. It begins by stating that a lifetime of exposure to noise levels of 85 to 90 dBA in industrial settings can cause a gradual loss of hearing. Environmental noise is present at far lower levels than industrial noise, and its impacts on non-auditory health cannot be attributed to sound energy.
 The important lesson from this essay, as with the other ones, is that irritation is the main effect of noise pollution, which can then cause stress reactions, physical symptoms, and even illness. Hence, noise pollution has an indirect effect on our health. Yet, noise may directly affect health rather than merely being a nuisance. The reaction to noise may vary depending on the noise's qualities, such as its strength, frequency, complexity, duration, and meaning.
@@ -337,32 +346,32 @@ Road traffic noise has been marginally related with mental health symptoms after
 The outcomes in the area of physical health were comparable and included rising blood pressure, cardiovascular conditions, and sleeplessness.
 
 
-<span style="font-size: 23px; text-decoration: underline;"> Literature 4 - Mental health effects of education:</span>
+## Literature 4 - Mental health effects of education
 
 The research investigates the connection between education and mental health in Zimbabwe. The authors evaluate the causal impact of education on mental health in later life using an instrumental variable (IV) method. Age-specific exposure to an educational reform in Zimbabwe during the 1980s served as the study's IV. Before 1980, Zimbabwe was a British colony, and there were a number of discriminatory laws and regulations that limited the educational opportunities available to Black Zimbabweans. After gaining independence, the new government put changes into place that helped Black children who were enrolled in elementary education at the time.
 Children who were 13 or younger in 1980 benefited disproportionately from these measures (treatment group). Children who were 14 or 15 years old in 1980 who were part of the partially treated group also made some academic progress. The treated group eventually accrued about three years of schooling and had a 39% point higher likelihood of attending secondary school. According to the IV findings, this improved education may have contributed to greater mental health in later life. An additional year of education decreased the likelihood of reporting any symptoms of sadness (11.3%) or anxiety (9.8%) in adulthood and also decreased the intensity of both depression (6.1%) and anxiety This study examines the influence of education on mental health in Zimbabwe.
 It finds that increased female empowerment, better health-related behavior, and greater physical health may be some of the ways that education may have influenced mental health. The report emphasizes the importance of funding education in low-income nations as a way to enhance mental health outcomes. It also suggests that measures to lessen gender and rural-urban differences in educational outcomes may have significant positive effects on mental health. Finally, it offers proof that enhancing physical health and health-related behaviors can have a favorable knock-on effect on results in mental health. The report emphasizes the value of education spending overall as a strategy of enhancing mental health and other socioeconomic outcomes.
 
 
-<span style="font-size: 23px; text-decoration: underline;"> Literature 5 - Income inequality and depression: a systematic review and meta‐analysis of the association and a scoping review of mechanisms:</span>
+## Literature 5 - Income inequality and depression: a systematic review and meta‐analysis of the association and a scoping review of mechanisms
 
 The goal of this study was to investigate the relationship between wealth disparity and depression, one of the most common mental health diseases worldwide. The search term used for the systematic review was "(depress* OR mental) AND (inequal* OR Gini)," and it covered a number of databases including PubMed/Medline, EBSCO, and PsycINFO. Studies presenting primary quantitative data with a measure of depression or depressed symptoms as an outcome as well as any measure of income disparity at any scale of geography met the inclusion criteria. The researchers used the Systematic Assessment of Quality in Observational Research (SAQOR) technique to conduct quality assessments after reviewing the titles and abstracts and collecting full-text articles for pertinent studies. Six categories under the SAQOR include sample, exposure/outcome measures, confounders, and data reporting.
 The study's findings demonstrated a statistically significant positive connection between income inequality and the prevalence of depression. A number of pathways, including social comparison and status anxiety, psychosocial stress, a lack of social support and cohesion, decreased social mobility, and increased exposure to environmental toxins and pollutants, were identified in the scoping review. The authors put out a theoretical framework that incorporates these pathways and emphasizes the part played by social determinants of health and policies that affect how income and wealth are distributed in forming the relationship between income disparity and depression. The study has ramifications for practice and policy, such as lowering economic disparity may benefit depression prevention and treatment, and it is important to address socioeconomic determinants of health, such as housing, employment, and education, in order to improve mental health and lessen health inequalities. The authors urge more investigation into the causal processes behind the link between income inequality and depression as well as the development and evaluation of therapies that specifically address these mechanisms.
 
 
-<span style="font-size: 23px; text-decoration: underline;"> Literature 6 - Relationship Between Long Working Hours and Depression:</span>
+## Literature 6 - Relationship Between Long Working Hours and Depression 
 
 This article explores the connection between clerical employees' excessive hours and depressed symptoms. The article opens by emphasizing that major depressive disorder and depressed state are significant occupational health issues in industrialized nations, and several research have examined the association between various states of mental and physical health and high job demand and/or limited job control. The article then focuses on how lengthy work hours relate to different mental and physical health conditions, with numerous research indicating a detrimental impact. Few research have examined the long-term consequences, and the results have not always been consistent. The article presents current research that shows people who work long hours have a higher chance of developing new depression symptoms or severe depressive episodes than people who work 7 to 8 hours per day. The long-term implications of extended working hours are still little understood, though. In order to better understand how long working hours impact future depressed moods and explore how people who work long hours are at a higher risk of developing depression, this prospective study set out to answer these questions. Unlinkable anonymous data gathered through self-administered questionnaires was used to perform the study. The article contains information on the study demographics and research strategy, including a longitudinal study that used repeated assessments of variables at each of the four time points during the course of the three-year follow-up. According to the study, those who work long hours and are overworked have a higher chance of developing depressive disorders in the future. The implications of the findings for prospective measures to lower the likelihood of severe depression in employees are covered in the article's conclusion.
 
 ---
 
-## Methodology
+# Methodology
 
 ---
 
-<span style="font-size: 22px; text-decoration: underline;">Data Description</span>.
+## Data Description
 
-<span style="font-size: 22px; text-decoration: underline;">My 3 main data sets are:</span>.
+<span style="font-size: 18px; text-decoration: underline;">My 3 main data sets are:</span>
 
 
 1)<b>Noise Pollution:</b> The Environmental Noise Directive, which was established in 2002, required all 27 of the member states of Europe to publish a noise report every five years for each city with a population of over 100,000 people. The reports will be broken down into 5 noise levels: 55 to 59 dB, 60 to 64 dB, 65 to 69 dB, 70 to 74 dB, and >75 dB. For each level of noise, the number of people exposed to it will be listed under it. The decibels are the average for the entire day (7:00–19:00); there is a 5 dB penalty for evening noise (19:00–23:00), and a 10 dB penalty for nighttime noise (23:00–7:00). (Environmental Noise Directive, n.d.)
@@ -371,7 +380,7 @@ Due to END's requirement that only member states publish the report, much of my 
 
 2)<b>Mental Health Disorders:</b> The next set of data I required was that pertaining to mental health conditions, such as depression, anxiety disorders, bipolar disorder, eating disorders, and schizophrenia.
 These numbers, which represent the percentages of the population affected by each disorder, were taken from Our World in Data.
-Since I already had information on noise pollution at the city level, I decided to look for information on mental health there as well. However, this information was incredibly hard to come by and was only available at the national level. To resolve this discrepancy, I decided to add the number of people exposed to each noise level and group my noise pollution data by countries. This, however, had two major issues:
+Since I already had information on noise pollution at the city level, I decided to look for information on mental health on the city level as well. However, this information was incredibly hard to come by and was only available at the national level. To resolve this discrepancy, I decided to add the number of people exposed to each noise level and group my noise pollution data by countries. This, however, had two major issues:
 
 - I was left with a much smaller amount of data.
 
@@ -382,23 +391,22 @@ Since I already had information on noise pollution at the city level, I decided 
 
 <b>Mean years of schooling (MYS)</b> is an index that measures the typical length of time that people in a population spend in school. It is a gauge of a society's or a nation's level of education. The total number of years of education completed by a group of people is divided by the total number of people in the group to determine the mean years of education. For instance, if a group of 100 people has completed 1,000 years of education in total, the mean number of years spent in school for that group is 10. The average number of years spent in school can be used to compare education levels between various groups, such as men and women or different regions of a country. It also serves as a starting point for a number of social and economic analyses, including the United Nations Development Program's (UNDP) calculation of the Human Development Index (HDI) (UNDP). The average number of years spent in school was gathered from "Global Data Lab."
 
-The <b>GINI index</b>, also known as the Gini coefficient, is a statistical indicator used to show how wealth or income is distributed among a population. The concept was created in 1912 by an Italian statistician by the name of Corrado Gini. The Gini index ranges from 0 to 1, with 0 signifying perfect equality (where everyone has the same level of wealth or income) and 1 signifying perfect inequality (where one person has all the income or wealth and everyone else has none). When determining the Gini index, The cumulative share of the population's income or wealth is first plotted against the cumulative share of the population using the Lorenz curve. The area between the Lorenz curve and the line of perfect equality, which is the diagonal line running from the bottom left corner to the top right corner of the graph, is then divided by the total area beneath the line of perfect equality to determine the Gini index. The Gini index is frequently employed as a gauge of wealth or income disparity in a community or nation. More inequality is denoted by higher Gini coefficients, and greater equality is shown by lower Gini values. The index can be used to compare wealth or income distributions across time or between various nations. Data for the GINI index were gathered from "The World Bank" website. (The World Bank, 2023)
+The <b>GINI index</b>, also known as the Gini coefficient, is a statistical indicator used to show how wealth or income is distributed among a population. The concept was created in 1912 by an Italian statistician by the name of Corrado Gini. The Gini index ranges from 0 to 1, with 0 signifying perfect equality (where everyone has the same level of wealth or income) and 1 signifying perfect inequality (where one person has all the income or wealth and everyone else has none). When determining the Gini index, The cumulative share of the population's income or wealth is first plotted against the cumulative share of the population using the Lorenz curve. The area between the Lorenz curve and the line of perfect equality, which is the diagonal line running from the bottom left corner to the top right corner of the graph, is then divided by the total area beneath the line of perfect equality to determine the Gini index. The Gini index is frequently employed as a gauge of wealth or income disparity in a community or nation. More inequality is denoted by higher Gini coefficients, and greater equality is shown by lower Gini values. The index can be used to compare wealth or income distributions across time or between various nations. Data for the GINI index were gathered from "The World Bank" website. (The World Bank, n.d)
 
 The final piece of information thought to be related to depression is the <b>number of hours worked per year</b> in each European nation in 2017. This information was taken from Our World in Data. According to Eurostat, the average number of hours worked annually by each employed individual in the EU-28 in 2017 was 1,569. This statistic can, however, differ considerably between nations and may be impacted by elements including labor laws, collective bargaining agreements, and cultural norms. It should be noted that the EU-28 at the time included the UK, which has since departed the EU, and referred to all 28 members of the European Union.
 
-<span style="font-size: 27px; font-weight: bold;">Methods</span>
+## Methods
 
-
-<span style="font-size: 22px; text-decoration: underline;">Statistical Analysis:</span>.
+<span style="font-size: 18px; text-decoration: underline;">Statistical Analysis:</span>
 
 <b>*R was used for all of my statistical analysis.</b>
 
 1)<b>Shapiro-Wilk test</b>:
 
-The first test I made was the Shapiro-Wilk test, a statistical test used to evaluate the normality of a dataset, was the first test I ran to see if my data was normally distributed. The test determines if a sample of data is representative of a population that is normally distributed.
+The first test I made was the Shapiro-Wilk test, a statistical test used to evaluate the normality of a dataset. The test determines if a sample of data is representative of a population that is normally distributed.
 The Shapiro-Wilk test's null hypothesis is that the data have a normal distribution. The alternative hypothesis is that a normal distribution is not followed by the data.
 In comparison to other normality tests, the Shapiro-Wilk test is more potent since it considers both the data's mean and variance, especially for small to moderate sample sizes, like mine.
-It's crucial to remember that the Shapiro-Wilk test is sensitive to non-normality, particularly in the distribution's tails. Because of this, even little deviations from normalcy may result in the null hypothesis being rejected, especially with large sample numbers. (Malato, 2023)
+It's crucial to remember that the Shapiro-Wilk test is sensitive to non-normality, particularly in the distribution's tails. Because of this, even little deviations from normalcy may result in the null hypothesis being rejected, especially with large sample numbers (Malato, 2023).
 I also used histograms to visually analyze my data to see if it was normally distributed.
 
 2)<b>Kendall's rank correlation coefficient test:</b>
@@ -427,7 +435,7 @@ Nonetheless, it is crucial to strategically and rationally include new predictor
 The additional predictor factors I chose to include are supported by research that indicates they are connected to mental health issues. (Wong, 2020)
 
 
-<span style="font-size: 22px; text-decoration: underline;">Mapping:</span>.
+<span style="font-size: 18px; text-decoration: underline;">Mapping:</span>
 
 <b>*ArcGIS Pro was used for all the mapping done in this paper.</b>
 
@@ -458,7 +466,7 @@ By using IDW I can learn more about the spatial distribution of noise pollution 
 
 Another useful tool to evaluate the spatial distribution is the Hot Spot Analysis, This tool identifies statistically significant spatial clusters of high values (hot spots) and low values (cold spots) using Getis-Ord Gi statistic. It creates an Output Feature Class with a z-score, p-value, and confidence level bin field (Gi_Bin) for each feature in the Input Feature Class.
 
-<span style="font-size: 22px; text-decoration: underline;">Limitations:</span>.
+## Limitations
 
 It's crucial to note that I began the data collection process with 36 countries but ended up with 27 since several of the countries had no data accessible. The countries that were eliminated from the research are:
 
@@ -474,13 +482,15 @@ Austria, Belgium, Bulgaria, Croatia, Denmark, Estonia, Finland, France, Germany,
 
 Dropping from 36 to 27 countries means that my hotspot analysis wasn't as accurate as it may have been since the recommendation is to have at least 30 input features.
 
----
-
-## Results
+And as I stated previously The percentage of the population exposed to various noise levels isn’t based on the entire population but rather only on people who live in cities with 100,000 or more residents, whereas the data on mental health is based on the entire population.
 
 ---
 
-<span style="font-size: 28px; text-decoration: underline;">Statistical Analysis Results</span>
+# Results
+
+---
+
+## Statistical Analysis Results
 
 <span style="font-size: 22px; text-decoration: underline;">1.Normality Test:</span>
 
@@ -517,6 +527,7 @@ This discrepancy between the p-values and the histograms can be explained by the
 
 Histograms, on the other hand, are graphical representations that display the distribution of data by grouping it into bins. With small sample sizes, the number of data points available for creating the histogram is limited. As a result, the histogram may not accurately reflect the true underlying distribution of the data. The appearance of the histogram might suggest non-normality due to random fluctuations, even if the data is truly drawn from a normal distribution.
 
+Finally, I decided to rely only on the p-values to determine whether the data is distributed normally.
 
 <span style="font-size: 22px; text-decoration: underline;">2.Correlation Test:</span>.
 
@@ -604,7 +615,7 @@ In conclusion, none of the mental health disorders I examined have substantial o
 This shows that there may not be any association at all between these mental health issues and the selected predictors.
 
 
-<span style="font-size: 28px; text-decoration: underline;">Mapping Results</span>
+## Mapping Results
 
 <span style="font-size: 22px; text-decoration: underline;">1.Heat Maps:</span>
 
@@ -643,68 +654,148 @@ knitr::include_graphics("Hot Spot Analysis.png")
 
 I can determine with 95% certainty that the Slovakia-Hungary-Slovenia region is a noise pollution hot spot by looking at the output map. If I lower my confidence to 90%, I can also include Austria in this hotspot. Also identified as a hot zone with 90% confidence was Lithuania. There were no cold spots found.
 
-## Conclusions:
+---
 
+# Conclusions
 
-## Appendices:
+---
+
+This comprehensive study delves into the intricate relationship between exposure to traffic-related noise pollution and mental health, shedding light on a complex relationship that warrants further investigation. While my analysis reveals the presence of weak correlations between noise pollution exposure and specific mental health disorders, it is important to recognize that causation remains ambiguous. Several factors contribute to this complexity, including the small sample size, potential deviations from normality in my data, weak correlation coefficient and the absence of statistically significant linear regression associations. The modest sample size of 27 European countries imposes inherent limitations on the study's statistical power. 
+
+The Shapiro-Wilks test initially suggested that some variables followed a normal distribution, as indicated by relatively high p-values. However, when visually inspecting histograms, we observed deviations from normality. This discrepancy underscores the sensitivity of normality tests to sample size, as smaller datasets may yield higher p-values, potentially masking non-normality. Therefore, my reliance solely on p-values for normality assessment may not offer a complete picture of data distribution. It underscores the importance of cautious interpretation when sample sizes are limited, and the visual examination of data distribution remains a valuable diagnostic tool.
+
+The Kendall rank correlation tests suggested that there is a weak and diverse relationship between mental health disorders and the percentage of the population exposed to noise pollution. While some disorders show weak negative associations and one shows a weak positive association, the overall picture indicates that noise pollution exposure is not a strong predictor of the prevalence of these disorders. It is important to consider that mental health is influenced by a multitude of factors, including genetic, environmental, and societal.
+
+Furthermore, the lack of significant linear regression associations between noise pollution and mental health disorders does not enhance the multifaceted nature of this relationship. None of the predictor variables, including noise exposure and socio-economic factors such as the GINI Index, average years of schooling, and annual working hours, demonstrated strong associations with mental health outcomes. This implies that the selected predictors may not provide reliable indicators of mental health in the context of noise pollution.
+
+However, my geospatial analysis brought forth crucial insights. Hotspots of noise pollution were identified in central and eastern Europe, notably in regions surrounding Slovakia, Hungary, Slovenia, and Lithuania. These localized clusters of high noise pollution levels warrant special attention from policymakers and urban planners. The spatial distribution of noise pollution implies that interventions should be tailored to specific geographic areas to effectively mitigate its impact on mental health.
+
+In summary, this study illuminates the intricate relationship between traffic-related noise pollution and mental health. While weak correlations are evident, causation remains elusive. The limitations posed by a modest sample size, potential deviations from normality, weak correlation coefficients and the absence of significant linear regression associations underscore the need for caution in drawing definitive conclusions. It becomes evident that further research is crucial to unraveling the nuances of this relationship. Policymakers and researchers must consider a holistic approach that accounts for multiple factors contributing to mental health outcomes. This research serves as a call to action for continued investigation and evidence-based policy decisions to address the impact of traffic-related noise pollution on mental health comprehensively.
+
+---
+
+# Appendices
 
 ---
 
 The percentages of the population that experience depression are shown on this map:
 
 ```{r,echo = FALSE}
-knitr::include_graphics("Depression.png")
+knitr::include_graphics("Depression.jpg")
 
 ```
 
 The percentages of the population that experience anxiety are shown on this map:
 
 ```{r,echo = FALSE}
-knitr::include_graphics("Anxiety.png")
+knitr::include_graphics("Anxiety.jpg")
 
 ```
 
 The percentages of the population with eating disorders are shown on this map:
 
 ```{r,echo=FALSE}
-knitr::include_graphics("Eating Disorders.png")
+knitr::include_graphics("Eating Disorders.jpg")
 
 ```
 
 The percentages of the population that have bipolar disorder are shown on this map:
 
 ```{r,echo = FALSE}
-knitr::include_graphics("Bipolar.png")
+knitr::include_graphics("Bipolar.jpg")
 
 ```
 
 The percentages of the people with schizophrenia are shown on this map:
 
 ```{r,echo = FALSE}
-knitr::include_graphics("Schizophrenia.png")
+knitr::include_graphics("Schizophrenia.jpg")
 
 ```   
 
 The GINI index for the EU nations is shown on this map:
 
 ```{r,echo = FALSE}
-knitr::include_graphics("Gini.png")
+knitr::include_graphics("Gini.jpg")
 
 ```
 
 The mean number of years spent in education in each nation is shown on this map:
 
 ```{r, echo = FALSE}
-knitr::include_graphics("MYS.png")
+knitr::include_graphics("MYS.jpg")
 
 ```
 
 The average yearly working hours are shown on this map for each nation:
 
 ```{r, echo = FALSE}
-knitr::include_graphics("Annual Working Hours.png")
+knitr::include_graphics("Annual Working Hours.jpg")
 
 ```
 
+---
 
+# Bibliography
+
+---
+
+* Abdi, H. (2007). The Kendall Rank Correlation Coefficient. 
+
+<span style="display: inline-block; margin-left: 40px;"> Retrieved September 26, 2023, from https://personal.utdallas.edu/~herve/Abdi-KendallCorrelation2007-pretty.pdf
+ </span>
+
+* Environmental Noise Directive. (n.d.). Environment. 
+
+<span style="display: inline-block; margin-left: 40px;"> Retrieved September 26, 2023, from https://environment.ec.europa.eu/topics/noise/environmental-noise-directive_en
+ </span>
+
+* EPA identifies noise levels affecting health and welfare. US EPA. (1974). 
+
+<span style="display: inline-block; margin-left: 40px;"> https://www.epa.gov/archive/epa/aboutepa/epa-identifies-noise-levels-affecting-health-and-welfare.html </span>
+
+
+* Gini index. DataBank. (n.d.). 
+
+<span style="display: inline-block; margin-left: 40px;"> https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SI.POV.GINI </span>
+
+* Kondirolli, F., & Sunder, N. (2022). Mental health effects of education. Health Economics, 31(S2), 22–39. 
+
+<span style="display: inline-block; margin-left: 40px;"> https://doi.org/10.1002/hec.4565 </span>
+
+* Malato, G. (2023). An introduction to the Shapiro-Wilk test for normality. Built In. 
+
+<span style="display: inline-block; margin-left: 40px;"> https://builtin.com/data-science/shapiro-wilk-test
+</span>
+
+* Patel, V., Burns, J. K., Dhingra, M., Tarver, L., Kohrt, B. A., & Lund, C. (2018). Income inequality and depression: a 
+
+<span style="display: inline-block; margin-left: 40px;"> systematic review and meta-analysis of the association and a scoping review of mechanisms. World Psychiatry, 17(1), 76–89. 
+</span>
+
+<span style="display: inline-block; margin-left: 40px;"> https://doi.org/10.1002/wps.20492
+</span>
+
+* Singh, D., Kumari, N., & Sharma, P. (2018). A review of adverse effects of road traffic noise on human health.  
+
+<span style="display: inline-block; margin-left: 40px;"> Fluctuation and Noise Letters, 17(01), 1830001. </span>
+
+<span style="display: inline-block; margin-left: 40px;"> https://doi.org/10.1142/s021947751830001x </span>
+
+
+* Singh, N., & Davar, S. C. (2004). Noise Pollution-Sources, Effects and Control. Journal of Human Ecology, 16(3), 181–187. 
+
+<span style="display: inline-block; margin-left: 40px;"> https://doi.org/10.1080/09709274.2004.11905735 </span>
+
+* Tabraiz, S., Ahmad, S., Shehzadi, I., & Asif, M. B. (2015). Study of physio-psychological effects on traffic wardens due to 
+
+<span style="display: inline-block; margin-left: 40px;"> traffic noise pollution; exposure-effect relation. Journal of Environmental Health Science & Engineering, 13(1). 
+ </span>
+
+<span style="display: inline-block; margin-left: 40px;">https://doi.org/10.1186/s40201-015-0187-x </span>
+
+* Wong, J. (2020). Linear regression explained - towards data science. Medium. 
+
+<span style="display: inline-block; margin-left: 40px;"> https://towardsdatascience.com/linear-regression-explained-1b36f97b7572
+ </span>
 
