@@ -114,6 +114,26 @@ correlation_bipolar = correlation_coefficient = cor(noise_mental_education_gini_
 correlation_eating_disorder = correlation_coefficient = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Eating Disorder %`, method = "kendall")
 correlation_schizophernia = correlation_coefficient = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Schizophrenia %`, method = "kendall")
 
+correlation_depression_2 = cor(noise_mental_education_gini_Work$`Gini Index`, noise_mental_education_gini_Work$`Depression %`, method = "kendall")
+correlation_anxiety_2 = cor(noise_mental_education_gini_Work$`Gini Index`, noise_mental_education_gini_Work$`Anxiety %`, method = "kendall")
+correlation_bipolar_2 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Gini Index`, noise_mental_education_gini_Work$`Bipolar Disorder %`, method = "kendall")
+correlation_eating_disorder_2 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Gini Index`, noise_mental_education_gini_Work$`Eating Disorder %`, method = "kendall")
+correlation_schizophernia_2 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Gini Index`, noise_mental_education_gini_Work$`Schizophrenia %`, method = "kendall")
+
+correlation_depression_3 = cor(noise_mental_education_gini_Work$`Annual Working Hours`, noise_mental_education_gini_Work$`Depression %`, method = "kendall")
+correlation_anxiety_3 = cor(noise_mental_education_gini_Work$`Annual Working Hours`, noise_mental_education_gini_Work$`Anxiety %`, method = "kendall")
+correlation_bipolar_3 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Annual Working Hours`, noise_mental_education_gini_Work$`Bipolar Disorder %`, method = "kendall")
+correlation_eating_disorder_3 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Annual Working Hours`, noise_mental_education_gini_Work$`Eating Disorder %`, method = "kendall")
+correlation_schizophernia_3 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Annual Working Hours`, noise_mental_education_gini_Work$`Schizophrenia %`, method = "kendall")
+
+correlation_depression_4 = cor(noise_mental_education_gini_Work$`Avreage Years in School`, noise_mental_education_gini_Work$`Depression %`, method = "kendall")
+correlation_anxiety_4 = cor(noise_mental_education_gini_Work$`Avreage Years in School`, noise_mental_education_gini_Work$`Anxiety %`, method = "kendall")
+correlation_bipolar_4 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Avreage Years in School`, noise_mental_education_gini_Work$`Bipolar Disorder %`, method = "kendall")
+correlation_eating_disorder_4 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Avreage Years in School`, noise_mental_education_gini_Work$`Eating Disorder %`, method = "kendall")
+correlation_schizophernia_4 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Avreage Years in School`, noise_mental_education_gini_Work$`Schizophrenia %`, method = "kendall")
+
+
+
 library(ggplot2)
 
 par(mfrow = c(1, 2)) 

@@ -1,13 +1,13 @@
 ---
 title: "GIT Seminar"
-subtitle: "Does traffic-related noise pollution affect our mental health?"
+subtitle: "Exploring the Link Between Traffic Noise Pollution and Mental Well-being"
 author: Tal Bracha
 date: "September 2023"
 output: rmdformats::readthedown
 ---
    
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
-setwd("C:/Users/User/Desktop/Geo-informatics Seminar/Seminar/Data")
+setwd("C:/Users/talqq/Desktop/Geo-informatics Seminar/Seminar/Data")
 library(dplyr)
 library(knitr)
 ##Cleaning the data:
@@ -123,6 +123,25 @@ correlation_bipolar = correlation_coefficient = cor(noise_mental_education_gini_
 correlation_eating_disorder = correlation_coefficient = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Eating Disorder %`, method = "kendall")
 correlation_schizophernia = correlation_coefficient = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Schizophrenia %`, method = "kendall")
 
+correlation_depression_2 = cor(noise_mental_education_gini_Work$`Gini Index`, noise_mental_education_gini_Work$`Depression %`, method = "kendall")
+correlation_anxiety_2 = cor(noise_mental_education_gini_Work$`Gini Index`, noise_mental_education_gini_Work$`Anxiety %`, method = "kendall")
+correlation_bipolar_2 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Gini Index`, noise_mental_education_gini_Work$`Bipolar Disorder %`, method = "kendall")
+correlation_eating_disorder_2 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Gini Index`, noise_mental_education_gini_Work$`Eating Disorder %`, method = "kendall")
+correlation_schizophernia_2 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Gini Index`, noise_mental_education_gini_Work$`Schizophrenia %`, method = "kendall")
+
+correlation_depression_3 = cor(noise_mental_education_gini_Work$`Annual Working Hours`, noise_mental_education_gini_Work$`Depression %`, method = "kendall")
+correlation_anxiety_3 = cor(noise_mental_education_gini_Work$`Annual Working Hours`, noise_mental_education_gini_Work$`Anxiety %`, method = "kendall")
+correlation_bipolar_3 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Annual Working Hours`, noise_mental_education_gini_Work$`Bipolar Disorder %`, method = "kendall")
+correlation_eating_disorder_3 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Annual Working Hours`, noise_mental_education_gini_Work$`Eating Disorder %`, method = "kendall")
+correlation_schizophernia_3 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Annual Working Hours`, noise_mental_education_gini_Work$`Schizophrenia %`, method = "kendall")
+
+correlation_depression_4 = cor(noise_mental_education_gini_Work$`Avreage Years in School`, noise_mental_education_gini_Work$`Depression %`, method = "kendall")
+correlation_anxiety_4 = cor(noise_mental_education_gini_Work$`Avreage Years in School`, noise_mental_education_gini_Work$`Anxiety %`, method = "kendall")
+correlation_bipolar_4 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Avreage Years in School`, noise_mental_education_gini_Work$`Bipolar Disorder %`, method = "kendall")
+correlation_eating_disorder_4 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Avreage Years in School`, noise_mental_education_gini_Work$`Eating Disorder %`, method = "kendall")
+correlation_schizophernia_4 = correlation_coefficient = cor(noise_mental_education_gini_Work$`Avreage Years in School`, noise_mental_education_gini_Work$`Schizophrenia %`, method = "kendall")
+
+
 library(ggplot2)
 
 par(mfrow = c(1, 2)) 
@@ -208,6 +227,19 @@ correlation_df = stack(list("Depression" = correlation_depression, "Anxiety " = 
 correlation_df <- correlation_df[, c("ind", "values")]
 colnames(correlation_df) = c("Mental Health Disorder", "Correlation Coefficient Value")
 
+correlation_df_2 = stack(list("Depression" = correlation_depression_2, "Anxiety " = correlation_anxiety_2, "Eating Disorder" = correlation_eating_disorder_2, "Bipolar" = correlation_bipolar_2, "Schizophrenia" = correlation_schizophernia_2))
+correlation_df_2 <- correlation_df_2[, c("ind", "values")]
+colnames(correlation_df_2) = c("Mental Health Disorder", "Correlation Coefficient Value")
+
+correlation_df_3 = stack(list("Depression" = correlation_depression_3, "Anxiety " = correlation_anxiety_3, "Eating Disorder" = correlation_eating_disorder_3, "Bipolar" = correlation_bipolar_3, "Schizophrenia" = correlation_schizophernia_3))
+correlation_df_3 <- correlation_df_3[, c("ind", "values")]
+colnames(correlation_df_3) = c("Mental Health Disorder", "Correlation Coefficient Value")
+
+correlation_df_4 = stack(list("Depression" = correlation_depression_4, "Anxiety " = correlation_anxiety_4, "Eating Disorder" = correlation_eating_disorder_4, "Bipolar" = correlation_bipolar_4, "Schizophrenia" = correlation_schizophernia_4))
+correlation_df_4 <- correlation_df_4[, c("ind", "values")]
+colnames(correlation_df_4) = c("Mental Health Disorder", "Correlation Coefficient Value")
+
+
 correlation_education = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Avreage Years in School`, method = "kendall")
 
 ```
@@ -285,12 +317,17 @@ schiz_coe_df$`z value` = NULL
 ### Author: Tal Bracha
 ### Year: 2023
 ### Advisor: Prof. Itai Kloog
+
+![](C:/Users/talqq/Desktop/logo.png)
 </div>
+
+
+
 ---
 
 # Abstract 
 
-This paper investigates the potential impact of exposure to traffic-related noise pollution on mental health, utilizing a multidisciplinary approach that combines statistical analysis, geospatial techniques, and regression modeling. Data from 27 European countries were analyzed to assess the relationship between noise pollution exposure and the prevalence of various mental health disorders, including depression, anxiety, bipolar disorder, eating disorders, and schizophrenia. The study also explored the influence of socio-economic factors, such as the GINI Index, average years of schooling, and annual working hours, on mental health outcomes. The findings suggest that while some weak correlations exist between noise pollution exposure and specific mental health disorders, these associations do not imply causation. Geospatial analysis revealed hotspots of noise pollution in central and eastern Europe, which could guide future intervention strategies. Ultimately, this study underscores the complexity of the relationship between noise pollution and mental health, emphasizing the need for further research and policy interventions to better understand and address this issue.
+This paper investigates the potential impact of exposure to traffic-related noise pollution on mental health, utilizing a multidisciplinary approach that combines statistical analysis, regression modeling and geospatial techniques. Data from 27 European countries were analyzed to assess the relationship between noise pollution exposure and the prevalence of various mental health disorders, including depression, anxiety, bipolar disorder, eating disorders, and schizophrenia. The study also explored the influence of socio-economic factors, such as the GINI Index, average years of schooling, and annual working hours, on mental health outcomes. The findings suggest that while some weak correlations exist between noise pollution exposure and specific mental health disorders, these associations do not imply causation. Geospatial analysis revealed hotspots of noise pollution in central and eastern Europe, which could guide future intervention strategies. Ultimately, this study underscores the complexity of the relationship between noise pollution and mental health, emphasizing the need for further research and policy interventions to better understand and address this issue.
 
 ---
 
@@ -298,9 +335,9 @@ This paper investigates the potential impact of exposure to traffic-related nois
 
 ---
 
-Concern over the detrimental consequences of traffic noise on mental health, especially the risk of depression, has grown in recent years. Millions of individuals worldwide are impacted by the widespread environmental stressor known as traffic noise, which has been shown to have negative impacts on physical health. Little is known about how traffic noise affects mental health, particularly depression.
-Exposure to excessive noise has been related to a number of physical and mental health issues, including cardiovascular disease, sleep disorders, and anxiety. Noise pollution is a severe health risk (Stansfeld & Matheson, 2003). The influence of traffic noise on mental health is a growing field of research since it contributes significantly to noise pollution in metropolitan settings.
-Several research have indicated a link between exposure to traffic noise and a higher risk of developing depression, although the underlying processes are still not entirely understood. While some experts contend that traffic noise may raise the likelihood of depression by interfering with sleep and elevating stress levels, others contend that it may have an impact on the brain's ability to think clearly and regulate emotions.
+Concern over the detrimental consequences of traffic noise on mental health, especially the risk of depression, has grown in recent years. Millions of individuals worldwide and espicially in Europe are impacted by the widespread environmental stressor known as traffic noise, which has been shown to have negative impacts on physical health (European Environment Agency, n.d.). Little is known about how traffic noise affects mental health, particularly depression.
+Exposure to excessive noise has been related to a number of physical and mental health issues, including cardiovascular disease, sleep disorders, and anxiety (Stansfeld & Matheson, 2003). The influence of traffic noise on mental health is a growing field of research since it contributes significantly to noise pollution in metropolitan settings.
+Several research have indicated a link between exposure to traffic noise and a higher risk of developing depression, although the underlying processes are still not entirely understood. While some experts contend that traffic noise may raise the likelihood of depression by interfering with sleep and elevating stress levels (Orban et al., 2016), others contend that it may have an impact on the brain's ability to think clearly and regulate emotions (Jafari et al., 2019). 
 For successful methods to reduce the detrimental impacts of noise pollution on mental health, it is crucial to comprehend the link between traffic noise and depression. A deeper understanding of the connection between these two variables is essential for public health given the high incidence of traffic noise exposure in metropolitan settings and the large burden of depression.
 With a focus on the underlying processes and potential health effects, this study intends to examine the available research on the relationship between traffic noise and depression. The results of this study might help politicians and urban planners create practical plans to lessen the negative effects of traffic noise on mental health and raise standards of living generally in cities.
 
@@ -375,7 +412,8 @@ This article explores the connection between clerical employees' excessive hours
 
 
 1)<b>Noise Pollution:</b> The Environmental Noise Directive, which was established in 2002, required all 27 of the member states of Europe to publish a noise report every five years for each city with a population of over 100,000 people. The reports will be broken down into 5 noise levels: 55 to 59 dB, 60 to 64 dB, 65 to 69 dB, 70 to 74 dB, and >75 dB. For each level of noise, the number of people exposed to it will be listed under it. The decibels are the average for the entire day (7:00–19:00); there is a 5 dB penalty for evening noise (19:00–23:00), and a 10 dB penalty for nighttime noise (23:00–7:00). (Environmental Noise Directive, n.d.)
-Due to END's requirement that only member states publish the report, much of my most recent data had NA's values. After removing these values, I was left with cities from 30 different countries. The most recent data were from 2017 and included all cities in Europe with over 100,000 inhabitants from 36 different countries. The European Environment Agency website served as the source for this data and information. 
+The most recent data were from 2017 and included all cities in Europe with over 100,000 inhabitants from 36 different countries. Due to END's requirement that only member states publish the report, much of my most recent data had NA's values. After removing these values, I was left with cities from 30 different countries.
+The European Environment Agency website served as the source for this data and information. 
 
 
 2)<b>Mental Health Disorders:</b> The next set of data I required was that pertaining to mental health conditions, such as depression, anxiety disorders, bipolar disorder, eating disorders, and schizophrenia.
@@ -538,6 +576,20 @@ knitr::kable(correlation_df)
 
 ```
 
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(correlation_df_2)
+
+```
+
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(correlation_df_3)
+
+```
+
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(correlation_df_4)
+
+```
 All correlation coefficients are very small, which suggests that there are very weak correlations between the prevalence of mental health illnesses and the exposure to noise pollution.
 Depression, Anxiety, Eating Disorder and Bipolar show negative correlations, suggesting that higher levels of noise pollution exposure are weakly associated with slightly lower prevalence of these mental health disorders.
 Schizophrenia, on the other hand, has a weak positive correlation, implying that higher levels of noise pollution exposure are slightly associated with a higher prevalence or severity of Schizophrenia.
@@ -759,6 +811,12 @@ knitr::include_graphics("Annual Working Hours.jpg")
 
 <span style="display: inline-block; margin-left: 40px;"> https://databank.worldbank.org/metadataglossary/world-development-indicators/series/SI.POV.GINI </span>
 
+* Jafari, M. J., Khosrowabadi, R., Khodakarim, S., & Mohammadian, F. (2019). The Effect of
+
+<span style="display: inline-block; margin-left: 40px;">
+Noise Exposure on Cognitive Performance and Brain Activity Patterns. Open Access Macedonian Journal of Medical Sciences, 7(17), 2924–2931. https://doi.org/10.3889/oamjms.2019.742
+</span>
+
 * Kondirolli, F., & Sunder, N. (2022). Mental health effects of education. Health Economics, 31(S2), 22–39. 
 
 <span style="display: inline-block; margin-left: 40px;"> https://doi.org/10.1002/hec.4565 </span>
@@ -766,6 +824,16 @@ knitr::include_graphics("Annual Working Hours.jpg")
 * Malato, G. (2023). An introduction to the Shapiro-Wilk test for normality. Built In. 
 
 <span style="display: inline-block; margin-left: 40px;"> https://builtin.com/data-science/shapiro-wilk-test
+</span>
+
+* Noise pollution is still widespread across Europe, but there are ways to reduce the volume — 
+<span style="display: inline-block; margin-left: 40px;">European Environment Agency. (n.d.). Www.eea.europa.eu. Retrieved September 28, 2023, from https://www.eea.europa.eu/signals-archived/signals-2020/articles/noise-pollution-is-still-widespread
+</span>
+
+* Orban, E., McDonald, K., Sutcliffe, R., Hoffmann, B., Fuks, K. B., Dragano, N., Viehmann, 
+
+<span style="display: inline-block; margin-left: 40px;">
+A., Erbel, R., Jöckel, K.-H., Pundt, N., & Moebus, S. (2016). Residential Road Traffic Noise and High Depressive Symptoms after Five Years of Follow-up: Results from the Heinz Nixdorf Recall Study. Environmental Health Perspectives, 124(5), 578–585. https://doi.org/10.1289/ehp.1409400
 </span>
 
 * Patel, V., Burns, J. K., Dhingra, M., Tarver, L., Kohrt, B. A., & Lund, C. (2018). Income inequality and depression: a 
