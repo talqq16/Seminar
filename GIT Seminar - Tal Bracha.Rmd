@@ -386,6 +386,8 @@ schiz_coe_df$`z value` = NULL
 
 # Abstract 
 
+---
+
 This paper investigates the potential impact of exposure to traffic-related noise pollution on mental health, utilizing a multidisciplinary approach that combines statistical analysis, regression modeling and geospatial techniques. Data from 27 European countries were analyzed to assess the relationship between noise pollution exposure and the prevalence of various mental health disorders, including depression, anxiety, bipolar disorder, eating disorders, and schizophrenia. The study also explored the influence of socio-economic factors, such as the GINI Index, average years of schooling, and annual working hours, on mental health outcomes. The findings suggest that while some weak correlations exist between noise pollution exposure and specific mental health disorders, these associations do not imply causation. Geospatial analysis revealed hotspots of noise pollution in central and eastern Europe, which could guide future intervention strategies. Ultimately, this study underscores the complexity of the relationship between noise pollution and mental health, emphasizing the need for further research and policy interventions to better understand and address this issue.
 
 ---
