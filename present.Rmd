@@ -242,6 +242,65 @@ colnames(correlation_df_4) = c("Mental Health Disorder", "Correlation Coefficien
 
 correlation_education = cor(noise_mental_education_gini_Work$`Exposed to any noise % of total population`, noise_mental_education_gini_Work$`Avreage Years in School`, method = "kendall")
 
+scatter_plot_2 <- ggplot(noise_mental_education_gini_Work, aes(x = `Gini Index`)) +
+  geom_point(aes(y = `Depression %`, color = "Depression"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Schizophrenia %`, color = "Schizophrenia"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Anxiety %`, color = "Anxiety"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Bipolar Disorder %`, color = "Bipolar Disorder"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Eating Disorder %`, color = "Eating Disorder"), size = 2, alpha = 0.6) +
+  labs(x = "Gini Index", y = "% of the population suffering from menatl disorder") +
+  ggtitle("Mental Disorders vs. Gini Index") +
+  theme_minimal() +
+  scale_color_manual(values = c("blue", "red", "green", "black", "brown"),
+                     labels = c("Depression", "Schizophrenia", "Anxiety", "Bipolar Disorder", "Eating Disorder"))
+
+scatter_plot_with_trendlines_2 <- scatter_plot_2 +
+  geom_smooth(aes(y = `Depression %`), method = "lm", color = "blue", se = FALSE) +
+  geom_smooth(aes(y = `Schizophrenia %`), method = "lm", color = "red", se = FALSE) +
+  geom_smooth(aes(y = `Anxiety %`), method = "lm", color = "green", se = FALSE) +
+  geom_smooth(aes(y = `Bipolar Disorder %`), method = "lm", color = "black", se = FALSE) +
+  geom_smooth(aes(y = `Eating Disorder %`), method = "lm", color = "brown", se = FALSE)
+
+scatter_plot_3 <- ggplot(noise_mental_education_gini_Work, aes(x = `Avreage Years in School`)) +
+  geom_point(aes(y = `Depression %`, color = "Depression"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Schizophrenia %`, color = "Schizophrenia"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Anxiety %`, color = "Anxiety"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Bipolar Disorder %`, color = "Bipolar Disorder"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Eating Disorder %`, color = "Eating Disorder"), size = 2, alpha = 0.6) +
+  labs(x = "Avreage Years in School", y = "% of the population suffering from menatl disorder") +
+  ggtitle("Mental Disorders vs. Avreage Years in School") +
+  theme_minimal() +
+  scale_color_manual(values = c("blue", "red", "green", "black", "brown"),
+                     labels = c("Depression", "Schizophrenia", "Anxiety", "Bipolar Disorder", "Eating Disorder"))
+
+scatter_plot_with_trendlines_3 <- scatter_plot_3 +
+  geom_smooth(aes(y = `Depression %`), method = "lm", color = "blue", se = FALSE) +
+  geom_smooth(aes(y = `Schizophrenia %`), method = "lm", color = "red", se = FALSE) +
+  geom_smooth(aes(y = `Anxiety %`), method = "lm", color = "green", se = FALSE) +
+  geom_smooth(aes(y = `Bipolar Disorder %`), method = "lm", color = "black", se = FALSE) +
+  geom_smooth(aes(y = `Eating Disorder %`), method = "lm", color = "brown", se = FALSE)
+
+scatter_plot_4 <- ggplot(noise_mental_education_gini_Work, aes(x = `Annual Working Hours`)) +
+  geom_point(aes(y = `Depression %`, color = "Depression"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Schizophrenia %`, color = "Schizophrenia"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Anxiety %`, color = "Anxiety"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Bipolar Disorder %`, color = "Bipolar Disorder"), size = 2, alpha = 0.6) +
+  geom_point(aes(y = `Eating Disorder %`, color = "Eating Disorder"), size = 2, alpha = 0.6) +
+  labs(x = "Annual Working Hours", y = "% of the population suffering from menatl disorder") +
+  ggtitle("Mental Disorders vs. Annual Working Hours") +
+  theme_minimal() +
+  scale_color_manual(values = c("blue", "red", "green", "black", "brown"),
+                     labels = c("Depression", "Schizophrenia", "Anxiety", "Bipolar Disorder", "Eating Disorder"))
+
+scatter_plot_with_trendlines_4 <- scatter_plot_4 +
+  geom_smooth(aes(y = `Depression %`), method = "lm", color = "blue", se = FALSE) +
+  geom_smooth(aes(y = `Schizophrenia %`), method = "lm", color = "red", se = FALSE) +
+  geom_smooth(aes(y = `Anxiety %`), method = "lm", color = "green", se = FALSE) +
+  geom_smooth(aes(y = `Bipolar Disorder %`), method = "lm", color = "black", se = FALSE) +
+  geom_smooth(aes(y = `Eating Disorder %`), method = "lm", color = "brown", se = FALSE)
+
+
+
 ```
 
 ```{r ,echo = FALSE, warning = FALSE, message = FALSE, results= FALSE}
@@ -573,29 +632,40 @@ I ran the <b>Kendall's rank correlation coefficient test</b> on each of the ment
 
 ```{r, echo = FALSE, message = FALSE}
 knitr::kable(correlation_df)
-
 ```
 
-```{r, echo = FALSE, message = FALSE}
-knitr::kable(correlation_df_2)
-
-```
-
-```{r, echo = FALSE, message = FALSE}
-knitr::kable(correlation_df_3)
-
-```
-
-```{r, echo = FALSE, message = FALSE}
-knitr::kable(correlation_df_4)
-
-```
 All correlation coefficients are very small, which suggests that there are very weak correlations between the prevalence of mental health illnesses and the exposure to noise pollution.
 Depression, Anxiety, Eating Disorder and Bipolar show negative correlations, suggesting that higher levels of noise pollution exposure are weakly associated with slightly lower prevalence of these mental health disorders.
 Schizophrenia, on the other hand, has a weak positive correlation, implying that higher levels of noise pollution exposure are slightly associated with a higher prevalence or severity of Schizophrenia.
 
-It's crucial to emphasize that correlation does not imply causation. While these correlation coefficients provide insights into the associations between noise pollution exposure and mental health disorders, they do not establish a causal relationship. Further research and analysis would be required to determine the underlying factors and mechanisms contributing to these associations.
-In summary, the correlation coefficients suggest that there is a weak relationship between mental health disorders and the percentage of people exposed to noise pollution, with specific disorders showing either weak negative or weak positive associations.
+I also performed Kendall's test of correlation to determine whether there is a relationship between those mental health issues and the Gini Index, mean annual hours worked and the mean years of education.
+
+<u>Gini Index:</u>
+
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(correlation_df_2)
+```
+
+The Kendall's correlation coefficients between mental health disorders and the Gini index, which measures income inequality, reveal weak associations. Depression shows a weak positive correlation, indicating slightly higher rates in areas with greater income inequality. Anxiety exhibits a very weak negative correlation, suggesting a lack of substantial association. Meanwhile, eating disorders, bipolar disorder, and schizophrenia all demonstrate weak negative correlations, implying that higher income inequality might be weakly linked to slightly lower rates of these disorders.
+
+<u>Avreage Annual Working Hours:</u>
+
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(correlation_df_3)
+```
+
+The Kendall's correlation coefficients between mental health disorders and average annual working hours indicate mixed associations. Longer average annual working hours are moderately correlated with lower rates of anxiety, eating disorders, and bipolar disorder, suggesting that areas with extended work hours tend to have slightly fewer cases of these conditions. Additionally, schizophrenia exhibits a moderate positive correlation with longer working hours, suggesting slightly higher rates in areas with extended work hours. Notably, depression shows an almost negligible negative correlation, implying little to no relationship between depression rates and working hours.
+
+<u>Mean Years of Education:</u>
+
+```{r, echo = FALSE, message = FALSE}
+knitr::kable(correlation_df_4)
+```
+
+The negative values for all the disorders suggest a weak negative association between the prevalence of these mental health conditions and the mean years of education. In other words, as the mean years of education increase, the prevalence of these mental health disorders tends to slightly decrease, though the relationships are quite weak.
+
+It's crucial to emphasize that correlation does not imply causation. While these correlation coefficients provide insights into the associations between noise pollution exposure, gini index, avreage annual working hours, mean years of education and mental health disorders, they do not establish a causal relationship. Further research and analysis would be required to determine the underlying factors and mechanisms contributing to these associations.
+In summary, the correlation coefficients suggest that there is a weak relationship between mental health disorders and the percentage of people exposed to noise pollution and the socioeconomic factor that I chose with specific disorders showing either weak negative or weak positive associations.
 
 In addition to conducting correlation tests, you can also visually check correlation using scatter plots and trendlines:
 
@@ -603,13 +673,24 @@ In addition to conducting correlation tests, you can also visually check correla
 scatter_plot_with_trendlines
 ```
 
-The plot displays the relationship between the percentage of the population exposed to noise pollution and the percentage of the population that is suffering from different mental disorders. Each colored point on the graph represents a specific mental disorder. Trendlines, represented by the straight lines, have been fitted to each set of points to show potential correlations.
-Upon visual inspection, it is evident that the trendiness do not exhibit a consistent upward or downward pattern across the disorders. This lack of uniform trend across the disorders suggests that there is no strong linear correlation between noise exposure and the prevalence of these mental disorders. In other words, the plot indicates that changes in noise exposure do not appear to be closely associated with the variations in the prevalence of these mental disorders, similarly to the Kendall's rank correlation coefficient test.
+```{r,echo = FALSE, message = FALSE}
+scatter_plot_with_trendlines_2
+```
+
+```{r,echo = FALSE, message = FALSE}
+scatter_plot_with_trendlines_4
+```
+
+```{r,echo = FALSE, message = FALSE}
+scatter_plot_with_trendlines_3
+```
+
+Those plots display the relationship between the percentage of the population exposed to noise pollution and the the socioeconomic variables I considered to the percentage of the population that is suffering from different mental disorders. Each colored point on the graph represents a specific mental disorder. Trendlines, represented by the straight lines, have been fitted to each set of points to show potential correlations.
+
+Upon inspection, I can see that the anxiety trendline in the annual working hours plot unexpectedly decreases as more hours are worked, and the anxiety trendline in the mean years of education plot decreases as more years are spent in school.
+Other than that, there is no overall upward or downward tendency to the trendiness across the conditions. This lack of consistency among the disorders shows that the socioeconomic variables I looked at for the prevalence of various mental disorders and noise exposure do not have a strong linear association.
 
 <span style="font-size: 22px; text-decoration: underline;">3.Linear Regression Model:</span>
-
-
-I ran the linear regression model separately on each of my response variables using my permanent set of predictor variables, and got the following coefficients and p values: 
 
 Using my constant set of predictor variables I ran the linear regression model separately on each of my response variables and received the coefficients and p values listed below:
 
@@ -617,7 +698,6 @@ Using my constant set of predictor variables I ran the linear regression model s
 
 ```{r, echo = FALSE, message = FALSE}
 knitr::kable(dep_coe_df)
-
 ```
 
 * None of the predictor variables (noise exposure, Gini Index, average years in school, and annual working hours) show strong or statistically significant associations with depression.
@@ -627,7 +707,6 @@ knitr::kable(dep_coe_df)
 
 ```{r, echo = FALSE, message = FALSE}
 knitr::kable(anx_coe_df)
-
 ```
 
 * There is no clear or statistically significant association between any of the predictor variables and anxiety. 
@@ -637,7 +716,6 @@ knitr::kable(anx_coe_df)
 
 ```{r, echo = FALSE, message = FALSE}
 knitr::kable(bipolar_coe_df)
-
 ```
 
 * None of the predictor variables show a strong or statistically significant association with Bipolar Disorder.
@@ -647,7 +725,6 @@ knitr::kable(bipolar_coe_df)
 
 ```{r, echo = FALSE, message = FALSE}
 knitr::kable(eating_coe_df)
-
 ```
 
 * There is no clear or statistically significant link between any of the predictor variables and eating disorders.
@@ -657,7 +734,6 @@ knitr::kable(eating_coe_df)
 
 ```{r, echo = FALSE, message = FALSE}
 knitr::kable(schiz_coe_df)
-
 ```
 
 * All of the predictor variables don't appear to have a strong or statistically significant relationship to schizophrenia.
@@ -676,7 +752,7 @@ This is the map that was produced:
 
 
 ```{r, echo = FALSE}
-knitr::include_graphics("Heat Map.jpg")
+knitr::include_graphics("Noise.jpg")
 
 ```
 
@@ -692,7 +768,7 @@ knitr::include_graphics("IDW.jpg")
 ```
 
 The "value" represents the estimated percentage of people who are exposed to noise pollution.
-By looking at the map I can see that most of the noise pollution is concentrated mainly at the central part of Europe, the Baltic states and in south-eastern Europe (mainly Bulgaria).
+By looking at the map I can see that similarly to the heat map above most of the noise pollution is concentrated mainly at the central part of Europe, the Baltic states and in south-eastern Europe (mainly Bulgaria).
 While there are low concentrations of noise pollution in the Iberian Peninsula, the south of central Europe, the east of northern Europe, and the southeast of France.
 
 <span style="font-size: 22px; text-decoration: underline;">3.Hot Spot Analysis:</span>
@@ -700,7 +776,7 @@ While there are low concentrations of noise pollution in the Iberian Peninsula, 
 In order to perform the hot spot analysis, I had to select the polygon layer of the EU countries. As the input field, I chose the percentage of that nation's population exposed to noise pollution, as well as the kind of spatial relationship conceptualization, the "fixed distance band", which according to the ESRI website is best suited for the type of research I'm conducting. I received the following output map:
 
 ```{r,echo = FALSE}
-knitr::include_graphics("Hot Spot Analysis.png")
+knitr::include_graphics("Hot Spot Analysis.jpg")
 
 ```
 
